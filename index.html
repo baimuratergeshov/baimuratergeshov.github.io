@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Développeur BTS SIO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#1e1e2f',
+            card: '#252538',
+            cardHov: '#2c2c45',
+            border: '#33334d',
+            textMut: '#9090b0',
+            accent: '#e05252',
+            accentHov: '#c93f3f',
+          },
+          fontFamily: {
+            sans: ['Sora', 'system-ui', 'sans-serif'],
+            title: ['Outfit', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* scrollbar custom */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1e1e2f;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #33334d;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e05252;
+    }
+
+    /* animation au scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-bg text-white font-sans antialiased">
+
+  <!-- header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300
+         bg-bg/80 backdrop-blur-md border-b border-transparent">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
+
+      <img src="./img/Logo.svg" alt="" class="w-64">
+
+      <!-- Navigation desktop -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-textMut">
+        <a href="#about" class="hover:text-white transition-colors">À propos</a>
+        <a href="#skills" class="hover:text-white transition-colors">Compétences</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projets</a>
+        <a href="#contact" class="px-4 py-1.5 rounded-md bg-accent hover:bg-accentHov text-white transition-colors">
+          Contact
+        </a>
+      </nav>
+
+      <button id="menuBtn" aria-label="Ouvrir le menu"
+        class="md:hidden flex flex-col gap-1.5 p-2 rounded-md hover:bg-card transition-colors">
+        <span class="menu-bar block h-0.5 w-5 bg-white transition-all duration-300"></span>
+        <span class="menu-bar block h-0.5 w-5 bg-white transition-all duration-300"></span>
+        <span class="menu-bar block h-0.5 w-5 bg-white transition-all duration-300"></span>
+      </button>
+    </div>
+
+    <div id="mobileMenu"
+      class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out bg-card border-t border-border">
+      <nav class="flex flex-col px-6 py-4 gap-4 text-sm font-medium text-textMut">
+        <a href="#about" class="hover:text-white transition-colors nav-mobile-link">À propos</a>
+        <a href="#skills" class="hover:text-white transition-colors nav-mobile-link">Compétences</a>
+        <a href="#projects" class="hover:text-white transition-colors nav-mobile-link">Projets</a>
+        <a href="#contact" class="hover:text-white transition-colors nav-mobile-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center
+         px-5 sm:px-8 pt-24 pb-16">
+
+    <span class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full
+               bg-card border border-border text-textMut text-xs font-medium">
+      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+      Disponible pour stage
+    </span>
+
+    <h1 class="font-title font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-tight">
+      Bonjour, je suis<br />
+      <span class="text-accent">Baimurat ERGESHOV</span>
+    </h1>
+
+    <p class="font-sans mt-5 max-w-xl text-textMut text-base sm:text-lg leading-relaxed">
+      Étudiant en <strong class="text-white font-medium">BTS SIO option SLAM</strong>, je conçois des
+      applications web et des scripts back-end propres, maintenables et orientés utilisateur.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="#projects" class="px-5 py-2.5 rounded-lg bg-accent hover:bg-accentHov text-white font-medium
+              transition-colors duration-200 text-sm">
+        Voir mes projets
+      </a>
+      <a href="#contact" class="px-5 py-2.5 rounded-lg border border-border hover:border-accent
+              text-textMut hover:text-white font-medium transition-colors duration-200 text-sm">
+        Me contacter
+      </a>
+    </div>
+
+    <a href="#about" aria-label="Défiler vers le bas"
+      class="mt-16 text-textMut hover:text-accent transition-colors animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+  </section>
+
+  <!-- à propos -->
+  <section id="about" class="py-20 px-5 sm:px-8 max-w-6xl mx-auto">
+    <div class="reveal">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-2">À propos</p>
+      <h2 class="font-title text-3xl sm:text-4xl font-bold tracking-tight mb-10">Qui suis-je ?</h2>
+    </div>
+
+    <div class="reveal grid md:grid-cols-2 gap-10 items-center">
+
+      <div class="space-y-4 text-textMut leading-relaxed text-sm sm:text-base">
+        <p>
+          Je suis étudiant en <span class="text-white font-medium">BTS Services Informatiques aux Organisations
+            (SIO) option SLAM</span> passionné par le développement web depuis jeune.
+        </p>
+        <p>
+          Je suis plutôt curieux et autonome, j'aimerais beaucoup mettre en pratique mes compétences dans le monde du
+          travail.
+        </p>
+        <p>
+          En dehors du code, je m'intéresse à l'UI/UX design, j'essaie de créer de nouveaux design avec Adobe
+          Photoshop/Illustrator et Figma.
+        </p>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="info-pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="#e05252" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+            Vert-Saint-Denis, France
+          </span>
+          <span class="info-pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="#e05252" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+            BTS SIO SLAM
+          </span>
+          <span class="info-pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="#e05252" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+            </svg>
+            En recherche de stage
+          </span>
+        </div>
+
+        <div class="bg-card border border-border rounded-2xl p-6 space-y-4">
+          <h3 class="font-title font-semibold text-base mb-3">Points forts</h3>
+          <ul class="space-y-3 text-sm text-textMut">
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 text-accent text-base leading-none">▸</span>
+              Développement web front-end &amp; back-end
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 text-accent text-base leading-none">▸</span>
+              Sens du détail et goût pour le design propre
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 text-accent text-base leading-none">▸</span>
+              Bonne gestion de version avec Git &amp; GitHub
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 text-accent text-base leading-none">▸</span>
+              Travail en équipe
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 text-accent text-base leading-none">▸</span>
+              Capacité d'apprentissage rapide et autonomie
+            </li>
+          </ul>
+        </div>
+      </div>
+  </section>
+
+  <!-- compétences -->
+  <section id="skills" class="py-20 px-5 sm:px-8 bg-card/40">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal text-center mb-12">
+        <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-2">Compétences</p>
+        <h2 class="font-title text-3xl sm:text-4xl font-bold tracking-tight">Technologies &amp; outils</h2>
+      </div>
+
+      <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="skill-category">
+          <h3 class="skill-title">Front-end</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">HTML5</span>
+            <span class="badge">CSS3</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">Tailwind CSS</span>
+            <span class="badge">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-title">Back-end</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">PHP</span>
+            <span class="badge">SQL</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">Node.js</span>
+            <span class="badge">API REST</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-title">Outils</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Git</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">VS Code</span>
+            <span class="badge">Figma</span>
+            <span class="badge">Adobe Photoshop</span>
+            <span class="badge">Adobe Illustrator</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-title">Méthodes</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Architecture MVC</span>
+            <span class="badge">Structuration d’un projet web</span>
+            <span class="badge">Linux</span>
+            <span class="badge">Réseaux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- projets -->
+  <section id="projects" class="py-20 px-5 sm:px-8 max-w-6xl mx-auto">
+
+    <div class="reveal text-center mb-10">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-2">Projets</p>
+      <h2 class="font-title text-3xl sm:text-4xl font-bold tracking-tight mb-6">Ce que j'ai réalisé</h2>
+
+      <div class="flex flex-wrap justify-center gap-2" id="filterBtns">
+        <button data-filter="all" class="filter-btn active">Tous</button>
+        <button data-filter="web" class="filter-btn">Web</button>
+        <button data-filter="php" class="filter-btn">PHP</button>
+        <button data-filter="js" class="filter-btn">JavaScript</button>
+        <button data-filter="other" class="filter-btn">Autre</button>
+      </div>
+    </div>
+
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projectGrid">
+
+      <!-- salariés chambord -->
+      <div class="project-card" data-category="web php">
+        <div class="project-img-wrapper">
+          <img src="https://placehold.co/600x340/252538/e05252?text=Salari%C3%A9s+Chambord"
+            alt="Capture projet gestion des salariés" class="w-full h-full object-cover" />
+          <div class="project-overlay">
+            <span class="text-xs font-semibold uppercase tracking-widest">PHP · Web</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-title font-semibold text-base mb-1">Gestion des salariés - Hôtel Chambord</h3>
+          <p class="font-sans text-textMut text-sm leading-relaxed mb-4">
+            Application CRUD complète pour gérer les salariés d'un hôtel fictif : ajout, liste, modification et
+            suppression.
+            Architecture organisée en partials réutilisables (header/footer) et dossiers <code>process/</code> et
+            <code>utils/</code>.
+          </p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="badge-sm">PHP</span>
+            <span class="badge-sm">MySQL</span>
+            <span class="badge-sm">JavaScript</span>
+          </div>
+          <a href="#" class="project-btn" target="_blank" rel="noopener">
+            Voir sur GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- stagiaires MVC -->
+      <div class="project-card" data-category="php web">
+        <div class="project-img-wrapper">
+          <img src="https://placehold.co/600x340/252538/e05252?text=Stagiaires+MVC" alt="Capture projet stagiaires MVC"
+            class="w-full h-full object-cover" />
+          <div class="project-overlay">
+            <span class="text-xs font-semibold uppercase tracking-widest">PHP · MVC</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-title font-semibold text-base mb-1">Gestion des stagiaires - Architecture MVC</h3>
+          <p class="font-sans text-textMut text-sm leading-relaxed mb-4">
+            Application web structurée en architecture MVC (Modèle-Vue-Contrôleur) pour gérer des stagiaires, matières
+            et évaluations.
+            Inclut un dashboard admin, une validation de formulaire côté client et une séparation claire des
+            responsabilités.
+          </p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="badge-sm">PHP</span>
+            <span class="badge-sm">MVC</span>
+            <span class="badge-sm">MySQL</span>
+            <span class="badge-sm">Bootstrap</span>
+            <span class="badge-sm">JavaScript</span>
+          </div>
+          <a href="#" class="project-btn" target="_blank" rel="noopener">
+            Voir sur GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ce portfolio -->
+      <div class="project-card" data-category="web js">
+        <div class="project-img-wrapper">
+          <img src="./img/portfolio.png" alt="Capture portfolio" class="w-full h-full object-cover" />
+          <div class="project-overlay">
+            <span class="text-xs font-semibold uppercase tracking-widest">HTML · Tailwind</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-title font-semibold text-base mb-1">Ce portfolio</h3>
+          <p class="font-sans text-textMut text-sm leading-relaxed mb-4">
+            Portfolio personnel responsive construit en HTML, Tailwind CSS, CSS et JS.
+          </p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="badge-sm">HTML5</span>
+            <span class="badge-sm">Tailwind CSS</span>
+            <span class="badge-sm">CSS3</span>
+            <span class="badge-sm">JS</span>
+          </div>
+          <a href="#" class="project-btn" target="_blank" rel="noopener">
+            Voir sur GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- python/php/json -->
+      <div class="project-card" data-category="other">
+        <div class="project-img-wrapper">
+          <img src="https://placehold.co/600x340/252538/e05252?text=Python+%2F+PHP+%2F+JSON"
+            alt="Capture projet Python PHP JSON" class="w-full h-full object-cover" />
+          <div class="project-overlay">
+            <span class="text-xs font-semibold uppercase tracking-widest">Python · PHP · Autre</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-title font-semibold text-base mb-1">Intégration Python / PHP / JSON</h3>
+          <p class="font-sans text-textMut text-sm leading-relaxed mb-4">
+            Projet full-stack combinant un script Python et un back-end PHP autour d'échanges de données JSON.
+            Inclut un formulaire web, une base de données et un profil utilisateur dynamique, il permet la communication
+            entre deux langages back-end.
+          </p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="badge-sm">Python</span>
+            <span class="badge-sm">PHP</span>
+            <span class="badge-sm">JSON</span>
+            <span class="badge-sm">MySQL</span>
+          </div>
+          <a href="#" class="project-btn" target="_blank" rel="noopener">
+            Voir sur GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- hôtel chambord -->
+      <div class="project-card" data-category="php web">
+        <div class="project-img-wrapper">
+          <img src="./img/chambord.png" alt="Capture site Hôtel Chambord" class="w-full h-full object-cover" />
+          <div class="project-overlay">
+            <span class="text-xs font-semibold uppercase tracking-widest">HTML · PHP · Web</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-title font-semibold text-base mb-1">Site Hôtel Chambord</h3>
+          <p class="font-sans text-textMut text-sm leading-relaxed mb-4">
+            Site multi-pages pour un hôtel fictif réalisé en groupe : chambres, restaurant, spa, activités, réservation
+            et recrutement.
+            Intègre un système d'inscription/connexion, une gestion admin et une page de gestion des avis en PHP.
+          </p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="badge-sm">HTML</span>
+            <span class="badge-sm">CSS</span>
+            <span class="badge-sm">Bootstrap</span>
+            <span class="badge-sm">JavaScript</span>
+            <span class="badge-sm">PHP</span>
+            <span class="badge-sm">MySQL</span>
+          </div>
+          <a href="#" class="project-btn" target="_blank" rel="noopener">
+            Voir sur GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- movieDB -->
+      <div class="project-card" data-category="php web">
+        <div class="project-img-wrapper">
+          <img src="./img/movieDb.png" alt="Capture site movieDB" class="w-full h-full object-cover" />
+          <div class="project-overlay">
+            <span class="text-xs font-semibold uppercase tracking-widest">PHP · API REST</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-title font-semibold text-base mb-1">MovieDB - Site de films & séries</h3>
+          <p class="font-sans text-textMut text-sm leading-relaxed mb-4">
+            Site web PHP consommant l'API TMDb pour afficher films et séries populaires, les mieux notés et par genre.
+            Inclut une page détaillée par film, une fiche acteur.
+          </p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="badge-sm">PHP</span>
+            <span class="badge-sm">API REST</span>
+            <span class="badge-sm">TMDb API</span>
+            <span class="badge-sm">Bootstrap</span>
+          </div>
+          <a href="https://github.com/baimuratergeshov/movieDB" class="project-btn" target="_blank" rel="noopener">
+            Voir sur GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="py-20 px-5 sm:px-8 bg-card/40">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-2">Contact</p>
+      <h2 class="font-title text-3xl sm:text-4xl font-bold tracking-tight mb-4">Travaillons ensemble</h2>
+      <p class="font-sans text-textMut leading-relaxed mb-10 text-sm sm:text-base">
+        Vous avez un projet, une opportunité de stage ou d'alternance ?
+        N'hésitez pas à me contacter, je réponds généralement sous 24 h.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+        <a href="/cdn-cgi/l/email-protection#6406050d09111605104a01160301170c0b555657240309050d084a070b09"
+          class="contact-link group">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent group-hover:scale-110 transition-transform"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span class="__cf_email__"
+            data-cfemail="4426252d29313625306a21362321372c2b757677042329252d286a272b29">[email&#160;protected]</span>
+        </a>
+
+        <a href="https://github.com/baimuratergeshov" target="_blank" rel="noopener" class="contact-link group">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent group-hover:scale-110 transition-transform"
+            fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483
+                   0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608
+                   1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338
+                   -2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65
+                   0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337
+                   1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688
+                   0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747
+                   0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          Github
+        </a>
+
+        <a href="https://www.linkedin.com/in/baimurat-ergeshov-29b9013a7/" target="_blank" rel="noopener"
+          class="contact-link group">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent group-hover:scale-110 transition-transform"
+            fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136
+                   2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37
+                   4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063
+                   2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0
+                   23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222
+                   0h.003z" />
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="py-6 px-5 border-t border-border text-center text-textMut text-xs">
+    <p>
+      Conçu &amp; développé par <span class="text-white font-medium">Baimurat ERGESHOV</span>
+      - © <span id="currentYear"></span>. Fait avec HTML · Tailwind CSS · JS.
+    </p>
+  </footer>
+
+  <!-- bouton retour en haut -->
+  <button id="backToTop" aria-label="Retour en haut" class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-accent hover:bg-accentHov
+         text-white shadow-lg opacity-0 pointer-events-none
+         transition-all duration-300 translate-y-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <style>
+    .info-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .3rem .75rem;
+      border-radius: 9999px;
+      background: #252538;
+      border: 1px solid #33334d;
+      color: #9090b0;
+      font-size: .75rem;
+    }
+
+    .skill-category {
+      background: #252538;
+      border: 1px solid #33334d;
+      border-radius: 1rem;
+      padding: 1.25rem;
+    }
+
+    .skill-title {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #e05252;
+      margin-bottom: .75rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: .25rem .65rem;
+      border-radius: .375rem;
+      background: #1e1e2f;
+      border: 1px solid #33334d;
+      color: #9090b0;
+      font-size: .72rem;
+      font-weight: 500;
+      transition: border-color .2s, color .2s;
+    }
+
+    .badge:hover {
+      border-color: #e05252;
+      color: #fff;
+    }
+
+    .badge-sm {
+      display: inline-block;
+      padding: .15rem .5rem;
+      border-radius: .25rem;
+      background: #1e1e2f;
+      border: 1px solid #33334d;
+      color: #9090b0;
+      font-size: .68rem;
+      font-weight: 500;
+    }
+
+    .filter-btn {
+      padding: .35rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid #33334d;
+      color: #9090b0;
+      font-size: .8rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: transparent;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #e05252;
+      border-color: #e05252;
+      color: #fff;
+    }
+
+    .project-card {
+      background: #252538;
+      border: 1px solid #33334d;
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #e05252;
+      box-shadow: 0 12px 32px rgba(224, 82, 82, .15);
+    }
+
+    .project-img-wrapper {
+      position: relative;
+      height: 170px;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .project-img-wrapper img {
+      transition: transform .35s ease;
+    }
+
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 30, 47, .7);
+      display: flex;
+      align-items: flex-end;
+      padding: .75rem;
+      color: #e05252;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .78rem;
+      font-weight: 500;
+      color: #e05252;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .project-btn:hover {
+      color: #c93f3f;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.25rem;
+      border-radius: .75rem;
+      border: 1px solid #33334d;
+      color: #9090b0;
+      font-size: .85rem;
+      text-decoration: none;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+
+    .contact-link:hover {
+      border-color: #e05252;
+      color: #fff;
+      background: rgba(224, 82, 82, .08);
+    }
+  </style>
+
+  <!-- lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] flex items-center justify-center p-4
+           bg-black/80 backdrop-blur-sm
+           opacity-0 pointer-events-none transition-opacity duration-300">
+
+    <button id="lightboxClose" aria-label="Fermer" class="absolute top-4 right-4 z-10 p-2 rounded-full
+             bg-card border border-border text-textMut
+             hover:text-white hover:border-accent transition-colors duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <img id="lightboxImg" src="" alt="" class="max-w-full max-h-[85vh] rounded-xl shadow-2xl object-contain
+             scale-95 transition-transform duration-300" />
+  </div>
+
+
+  <script src="./script.js"></script>
+
+
+</body>
+
+</html>
