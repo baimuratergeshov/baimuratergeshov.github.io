@@ -19,3 +19,7 @@ desktop.ini
 
 
 img/originaux/
+
+## Pour exécuter la compréssion en webp :
+#python3 optimiser-images.py
+
