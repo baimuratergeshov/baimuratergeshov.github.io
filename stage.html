@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Stage chez Adyl Plombier, Baimurat Ergeshov</title>
+  <meta name="description"
+    content="Stage de BTS SIO SLAM chez Adyl Plombier : site public et back-office développés en PHP sur une architecture MVC sans framework, mis en production puis maintenus." />
+  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Stage chez Adyl Plombier" />
+  <meta property="og:description"
+    content="Site public et back-office en PHP, architecture MVC sans framework, de la conception à la maintenance." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./assets/tw-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Sora:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="./assets/style.css" />
+
+  <script src="./assets/script.js"></script>
+</head>
+
+<body class="bg-bg text-ink font-sans antialiased has-rail">
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="border-b border-line">
+    <div class="wrap flex flex-wrap items-center justify-between gap-y-2 py-3 sm:h-16 sm:py-0">
+      <a href="./index.html" class="font-mono text-[.78rem] text-ink hover:text-accent transition-colors">
+        baimurat<span class="text-dim">.ergeshov</span>
+      </a>
+      <nav aria-label="Navigation principale" class="flex items-center gap-4 sm:gap-7 font-mono text-[.72rem] text-mut">
+        <a href="./index.html" class="hover:text-ink transition-colors">Accueil</a>
+        <a href="./index.html#projets" class="hover:text-ink transition-colors">Projets</a>
+        <a href="./stage.html" class="text-accent" aria-current="page">Stage</a>
+        <a href="./veille.html" class="hover:text-ink transition-colors">Veille</a>
+        <a href="./index.html#contact" class="hover:text-ink transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="rail hidden xl:block" aria-label="Sommaire">
+    <a href="#contexte" class="is-active"><span class="bar" aria-hidden="true"></span>Contexte</a>
+    <a href="#entreprise"><span class="bar" aria-hidden="true"></span>Le besoin</a>
+    <a href="#demarche"><span class="bar" aria-hidden="true"></span>Démarche</a>
+    <a href="#architecture"><span class="bar" aria-hidden="true"></span>Architecture</a>
+    <a href="#backoffice"><span class="bar" aria-hidden="true"></span>Back-office</a>
+    <a href="#securite"><span class="bar" aria-hidden="true"></span>Sécurité</a>
+    <a href="#difficultes"><span class="bar" aria-hidden="true"></span>Difficultés</a>
+    <a href="#competences"><span class="bar" aria-hidden="true"></span>Compétences</a>
+    <a href="#bilan"><span class="bar" aria-hidden="true"></span>Bilan</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Contexte -->
+    <section id="contexte" class="wrap pt-16 pb-20 sm:pt-24 sm:pb-28">
+
+      <p class="ps-prompt mb-10">PS C:\ergeshov&gt; <span class="cmd">Get-Stage</span>
+        <span class="arg">-Annee 2025</span>
+      </p>
+
+      <h1 class="display text-[clamp(2.2rem,7vw,4.6rem)] max-w-[17ch]">
+        Six semaines chez un <em class="text-accent">plombier</em>
+      </h1>
+
+      <p class="lead mt-10">
+        Stage de première année de BTS SIO. Il s'agissait de donner une présence en ligne à un
+        artisan en plomberie d'urgence. J'y ai développé un <strong>site public et son
+          back-office</strong>, sur une architecture MVC sans framework. Le site est en production,
+        et je continue de le maintenir.
+      </p>
+
+      <dl class="fiche mt-14 max-w-3xl">
+        <div>
+          <dt>Entreprise</dt>
+          <dd>Adyl Plombier</dd>
+        </div>
+        <div>
+          <dt>Activité</dt>
+          <dd>Plomberie d'urgence et dépannage, 24 h/24 et 7 j/7</dd>
+        </div>
+        <div>
+          <dt>Zone d'intervention</dt>
+          <dd>Paris et Île-de-France (75, 77, 78, 91, 92, 93, 94, 95)</dd>
+        </div>
+        <div>
+          <dt>Période</dt>
+          <dd>Du 18 mai au 26 juin 2025</dd>
+        </div>
+        <div>
+          <dt>Durée</dt>
+          <dd>Six semaines</dd>
+        </div>
+        <div>
+          <dt>Rôle</dt>
+          <dd>Conception et développement, en autonomie</dd>
+        </div>
+        <div>
+          <dt>Technologies</dt>
+          <dd>PHP 8, MVC sans framework, MySQL, JSON, Tailwind CSS, JavaScript</dd>
+        </div>
+        <div>
+          <dt>Livrable</dt>
+          <dd>
+            <a href="https://adyl-plomberie.fr/" target="_blank" rel="noopener"
+              class="text-accent hover:text-ink transition-colors">adyl-plomberie.fr</a>
+          </dd>
+        </div>
+        <div>
+          <dt>Maître de stage</dt>
+          <dd>Adyl, gérant de l'entreprise</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Le besoin -->
+    <section id="entreprise" class="border-t border-line py-16 sm:py-24">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">01</span> Le besoin</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-10 max-w-[20ch]">
+          Être trouvé par quelqu'un qui a de l'eau au sol
+        </h2>
+
+        <div class="prose">
+          <p>
+            <strong>Adyl Plombier</strong> intervient en urgence à Paris et en Île-de-France, jour
+            et nuit, week-ends et jours fériés compris. Son activité reposait sur le
+            bouche-à-oreille et sur les plateformes de mise en relation, sans site à son nom.
+          </p>
+          <p>
+            Le public visé a déterminé toutes les décisions qui ont suivi. Quelqu'un qui cherche un
+            plombier ne lit pas une plaquette : il a une fuite, il est sur son téléphone, et il veut
+            un numéro. Le cahier des charges s'est donc construit autour d'une contrainte simple :
+            <strong>pouvoir appeler en moins de deux clics</strong>, depuis n'importe quelle page.
+          </p>
+          <p>
+            Les arguments à mettre en avant venaient de l'artisan lui-même : aucune majoration de
+            nuit ou de week-end, devis gratuit, travail garanti. Ce sont exactement les craintes
+            d'un particulier qui appelle un dépanneur en urgence, et il fallait y répondre avant
+            même qu'elles ne soient formulées.
+          </p>
+        </div>
+
+        <h3 class="h3 mt-14">Ce que couvrait le cahier des charges</h3>
+        <div class="prose">
+          <p>Défini avec mon maître de stage au démarrage, il portait sur deux ensembles.</p>
+          <p><strong>Le site public</strong>, en six pages :</p>
+          <ul>
+            <li>Accueil, avec les moyens de contact immédiatement visibles</li>
+            <li>Services, détaillant les huit types d'intervention</li>
+            <li>Zones d'intervention, par département</li>
+            <li>Galerie des réalisations</li>
+            <li>Blog, pour les conseils d'entretien et le référencement</li>
+            <li>Contact, avec formulaire et alternative téléphonique</li>
+          </ul>
+          <p>
+            <strong>Un back-office</strong> permettant à l'artisan de gérer lui-même ses contenus,
+            sans avoir à me solliciter : articles de blog, photos de galerie, avis clients et
+            messages reçus.
+          </p>
+          <p>
+            C'est ce second point qui a fait basculer le projet. Une vitrine statique aurait suffi
+            à la demande initiale ; elle aurait obligé l'artisan à me rappeler à chaque photo
+            ajoutée.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Démarche -->
+    <section id="demarche" class="border-t border-line py-16 sm:py-24 band">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">02</span> Démarche</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-12 max-w-[20ch]">
+          De l'intention au site en service
+        </h2>
+
+        <ol class="timeline max-w-3xl" data-collapse="26">
+          <li>
+            <span class="step-when">Étape 1</span>
+            <p class="step-what">Cadrage</p>
+            <p class="prose">
+              Entretien avec l'artisan, puis rédaction du cahier des charges avec mon maître de
+              stage : quelles pages, quelles informations doivent être trouvables en moins de dix
+              secondes, et quels contenus l'artisan devra pouvoir modifier seul.
+            </p>
+          </li>
+          <li>
+            <span class="step-when">Étape 2</span>
+            <p class="step-what">Conception</p>
+            <p class="prose">
+              Définition de la charte (bleu profond, bleu clair, orange réservé aux appels à
+              l'action), puis maquettage des écrans avant toute ligne de code. Corriger une maquette
+              coûte quelques minutes, corriger une page intégrée coûte une demi-journée.
+            </p>
+          </li>
+          <li>
+            <span class="step-when">Étape 3</span>
+            <p class="step-what">Socle technique</p>
+            <p class="prose">
+              Mise en place de l'architecture avant les pages : point d'entrée unique, routeur,
+              classes de base, connexion à la base de données. Développer les pages d'abord aurait
+              voulu dire les réécrire ensuite.
+            </p>
+          </li>
+          <li>
+            <span class="step-when">Étape 4</span>
+            <p class="step-what">Développement</p>
+            <p class="prose">
+              Les six pages publiques, puis le back-office : authentification, gestion des articles,
+              de la galerie, des avis et des messages.
+            </p>
+          </li>
+          <li>
+            <span class="step-when">Étape 5</span>
+            <p class="step-what">Référencement et documentation</p>
+            <p class="prose">
+              Balises de description, données structurées Schema.org, plan du site et robots.txt,
+              puis rédaction d'un compte-rendu technique décrivant chaque page et chaque
+              fonctionnalité. L'artisan devait pouvoir confier le site à quelqu'un d'autre sans moi.
+            </p>
+          </li>
+          <li>
+            <span class="step-when">Étape 6</span>
+            <p class="step-what">Mise en service</p>
+            <p class="prose">
+              Publication chez l'hébergeur, vérification en conditions réelles sur mobile comme sur
+              ordinateur, et remise des accès au back-office à l'artisan.
+            </p>
+          </li>
+          <li>
+            <span class="step-when">Après le stage</span>
+            <p class="step-what">Maintenance</p>
+            <p class="prose">
+              J'ai continué à corriger les bugs et les imperfections remontés par l'artisan une fois
+              le site utilisé quotidiennement. Un site ne se termine pas le jour de sa mise en
+              ligne : c'est ce jour-là qu'il commence à servir.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section id="architecture" class="border-t border-line py-16 sm:py-24">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">03</span> Architecture</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-10 max-w-[22ch]">
+          Un MVC écrit sans framework
+        </h2>
+
+        <div class="prose">
+          <p>
+            J'aurais pu installer un CMS, ou partir de Symfony. J'ai structuré l'application
+            moi-même, pour deux raisons. La première est pédagogique : c'était un stage de
+            formation, et j'apprends davantage en construisant le mécanisme qu'en configurant celui
+            d'un autre. La seconde est pratique : le site n'embarque que le code dont il a besoin,
+            sans extensions ni mises à jour de sécurité à suivre sur des composants inutilisés.
+          </p>
+          <p>
+            Le principe retenu est celui du <strong>point d'entrée unique</strong>. Toutes les
+            requêtes arrivent au même fichier, un routeur détermine quel contrôleur doit répondre,
+            le contrôleur interroge le modèle et transmet le résultat à une vue, qui se contente
+            d'afficher.
+          </p>
+        </div>
+
+        <p class="tree mt-8" role="img"
+          aria-label="Cheminement d'une requête : htaccess, puis index.php, puis le routeur, puis un contrôleur, puis un modèle, puis une vue, puis la réponse HTML">
+Requête HTTP
+  <u>→</u> public/.htaccess        <i>réécriture d'URL</i>
+  <u>→</u> public/index.php        <i>front controller</i>
+  <u>→</u> core/Router.php         <i>méthode + URI → Controller@action</i>
+  <u>→</u> app/Controllers/…       <i>décide, appelle le modèle</i>
+  <u>→</u> app/Models/…            <i>seul à parler aux données</i>
+  <u>→</u> app/Views/…             <i>affiche, ne décide de rien</i>
+  <u>→</u> Réponse HTML</p>
+
+        <h3 class="h3 mt-14">Ce qui est exposé, et ce qui ne l'est pas</h3>
+        <div class="prose">
+          <p>
+            C'est le choix dont je suis le plus satisfait. <strong>Seul le dossier public est
+              accessible depuis le web.</strong> Le code applicatif, la configuration, les
+            identifiants de base de données et les fichiers de données vivent au-dessus de la racine
+            web : même en devinant leur adresse, un visiteur ne peut pas les atteindre.
+          </p>
+        </div>
+
+        <p class="tree mt-8" data-collapse="20">
+Adyl_Plombier/
+├── .htaccess              <i>redirige tout vers public/</i>
+│
+├── <b>public/</b>                <u>seul dossier exposé sur le web</u>
+│   ├── index.php          <i>point d'entrée unique</i>
+│   ├── .htaccess          <i>tout vers index.php, sauf les fichiers statiques</i>
+│   └── assets/            <i>css, js, images, photos envoyées</i>
+│
+├── <b>app/</b>                   <i>hors racine web</i>
+│   ├── Controllers/       <i>public + Admin/</i>
+│   ├── Models/            <i>Blog, Message, Avis, Galerie</i>
+│   └── Views/             <i>layouts, pages, vues d'administration</i>
+│
+├── <b>core/</b>                  <i>le socle</i>
+│   ├── Router.php         <i>aiguillage des requêtes</i>
+│   ├── Controller.php     <i>render(), redirect(), json()</i>
+│   ├── Model.php          <i>connexion PDO partagée</i>
+│   └── View.php           <i>rendu d'une vue dans son gabarit</i>
+│
+├── <b>config/</b>                <i>routes, base de données, constantes</i>
+└── <b>data/</b>                  <i>avis et galerie en JSON</i></p>
+
+        <h3 class="h3 mt-14">Deux modes de stockage</h3>
+        <div class="prose">
+          <p>
+            Les données ne sont pas toutes logées à la même enseigne, et c'était volontaire.
+          </p>
+          <ul>
+            <li>
+              <strong>MySQL</strong> pour ce qui grandit et se recherche : articles de blog,
+              messages reçus, compte d'administration. Les accès passent uniquement par PDO en
+              requêtes préparées, et uniquement depuis les modèles.
+            </li>
+            <li>
+              <strong>Fichiers JSON</strong> pour les avis clients et les métadonnées de la
+              galerie. Des volumes faibles, lus à chaque page, modifiés rarement : une table et une
+              requête auraient coûté plus qu'ils n'auraient rapporté.
+            </li>
+          </ul>
+          <p>
+            Si le volume d'avis augmentait nettement, ce choix devrait être revu. Je le mentionne
+            parce que c'est une décision datée, prise dans un contexte précis, et non une règle
+            générale.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back-office -->
+    <section id="backoffice" class="border-t border-line py-16 sm:py-24 band">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">04</span> Back-office</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-10 max-w-[22ch]">
+          Rendre l'artisan autonome
+        </h2>
+
+        <div class="prose mb-12">
+          <p>
+            Un site que son propriétaire ne peut pas modifier meurt en six mois. L'espace
+            d'administration était donc la partie la plus utile du projet, et celle sur laquelle
+            j'ai le plus appris.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-10" data-collapse="26">
+          <div>
+            <h3 class="h3">Blog</h3>
+            <div class="prose">
+              <p>
+                Création, modification et suppression d'articles, avec un état brouillon ou publié.
+                L'artisan écrit en <strong>Markdown</strong>, converti en HTML par Parsedown, une
+                bibliothèque tenant en un seul fichier. Le lien d'adresse est généré automatiquement
+                à partir du titre en JavaScript, tout en restant modifiable, afin d'obtenir des
+                adresses lisibles plutôt que des numéros.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="h3">Galerie</h3>
+            <div class="prose">
+              <p>
+                Envoi de photos par glisser-déposer, avec aperçu avant validation. Les fichiers sont
+                renommés par un identifiant aléatoire et leur type réel est vérifié, pour qu'un
+                fichier déguisé en image ne puisse pas être déposé.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="h3">Avis clients</h3>
+            <div class="prose">
+              <p>
+                Au départ, les avis se modifiaient directement dans le fichier JSON. Une virgule
+                oubliée cassait l'affichage de la page d'accueil. J'ai donc ajouté un formulaire
+                d'administration qui écrit le fichier à ma place, avec validation du format de date
+                et limitation du nombre de photos.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="h3">Messages</h3>
+            <div class="prose">
+              <p>
+                Les demandes envoyées par le formulaire de contact sont enregistrées en base et
+                relevables depuis le tableau de bord, avec un état lu ou non lu et un compteur. Un
+                courriel qui se perd dans les indésirables ne se perd plus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sécurité -->
+    <section id="securite" class="border-t border-line py-16 sm:py-24">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">05</span> Sécurité</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-8 max-w-[24ch]">
+          Un espace d'administration ouvert sur internet
+        </h2>
+
+        <div class="prose mb-10">
+          <p>
+            À partir du moment où un formulaire de connexion est accessible publiquement, le site
+            devient une cible. Voici les mesures mises en place et le risque que chacune traite.
+          </p>
+        </div>
+
+        <div class="table-scroll" data-collapse="26">
+          <table class="data-table">
+            <caption class="sr-only">Mesures de sécurité mises en place et risques correspondants</caption>
+            <thead>
+              <tr>
+                <th scope="col">Risque</th>
+                <th scope="col">Mesure retenue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lecture du code source ou des identifiants</td>
+                <td>Tout le code applicatif, la configuration et les données sont placés hors de la
+                  racine web. Seul <code>public/</code> est servi.</td>
+              </tr>
+              <tr>
+                <td>Injection SQL</td>
+                <td>PDO en requêtes préparées exclusivement, et uniquement depuis les modèles.
+                  Aucune requête n'est construite par concaténation.</td>
+              </tr>
+              <tr>
+                <td>Injection de script (XSS)</td>
+                <td><code>htmlspecialchars()</code> systématique sur toute donnée affichée dans une
+                  vue.</td>
+              </tr>
+              <tr>
+                <td>Requête falsifiée (CSRF)</td>
+                <td>Jeton unique par formulaire, stocké en session et vérifié dans le contrôleur de
+                  base avant tout traitement.</td>
+              </tr>
+              <tr>
+                <td>Envoi d'un fichier piégé</td>
+                <td>Vérification du type MIME réel du fichier, liste blanche d'extensions,
+                  renommage par identifiant aléatoire, et blocage de l'exécution de PHP dans le
+                  dossier de dépôt.</td>
+              </tr>
+              <tr>
+                <td>Vol de session après connexion</td>
+                <td>Régénération de l'identifiant de session à chaque connexion, et expiration au
+                  bout de deux heures.</td>
+              </tr>
+              <tr>
+                <td>Mot de passe compromis</td>
+                <td>Aucun mot de passe stocké en clair : empreinte bcrypt via
+                  <code>password_hash()</code>, vérification par <code>password_verify()</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>Robots de formulaire</td>
+                <td>Champ piège invisible dans le formulaire de contact : rempli, la soumission est
+                  ignorée.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note mt-10">
+          <strong>Ce qui resterait à faire.</strong> Il n'y a pas de limitation du nombre de
+          tentatives de connexion, ce qui laisse la porte ouverte à une attaque par essais
+          successifs. C'est la première chose que j'ajouterais aujourd'hui.
+        </div>
+      </div>
+    </section>
+
+    <!-- Difficultés -->
+    <section id="difficultes" class="border-t border-line py-16 sm:py-24 band">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">06</span> Difficultés rencontrées</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-12 max-w-[20ch]">
+          Ce qui ne s'est pas passé comme prévu
+        </h2>
+
+        <div class="space-y-14 max-w-3xl" data-collapse="28">
+
+          <article>
+            <h3 class="h3">La galerie refusait silencieusement des photos</h3>
+            <div class="prose">
+              <p>
+                <strong>Le symptôme.</strong> En sélectionnant une dizaine de photos d'un coup, seule
+                une partie apparaissait dans la galerie. Aucun message d'erreur, aucune trace dans
+                les journaux : les fichiers manquants disparaissaient purement et simplement.
+              </p>
+              <p>
+                <strong>La recherche.</strong> J'ai d'abord soupçonné mon code de dépôt, puis le
+                fichier JSON des métadonnées. En comparant le nombre de fichiers réellement reçus
+                par PHP avec le nombre envoyé par le navigateur, j'ai vu que l'écart se produisait
+                <em>avant</em> d'arriver dans mon code.
+              </p>
+              <p>
+                <strong>La cause.</strong> La configuration de PHP plafonne le nombre de fichiers
+                acceptés par requête, ainsi que le poids total des données envoyées. Au-delà, le
+                surplus est écarté sans erreur. Mon code, lui, traitait correctement tout ce qu'il
+                recevait : il ne recevait simplement pas tout.
+              </p>
+              <p>
+                <strong>La correction.</strong> J'ai ajusté ces limites côté serveur, et surtout
+                j'ai fait comparer par l'application le nombre de fichiers sélectionnés à celui
+                effectivement reçu, pour <strong>afficher un avertissement</strong> plutôt que de
+                laisser croire à une réussite. Un traitement partiel qui se présente comme un succès
+                est pire qu'une erreur franche.
+              </p>
+              <p>
+                <strong>Ce que j'en retiens.</strong> Quand un comportement est silencieux, le
+                problème est souvent en amont du code que l'on relit. Vérifier ce qui entre
+                réellement dans le programme, avant de suspecter ce qu'il en fait, m'a fait gagner
+                du temps sur tous les bugs suivants.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <h3 class="h3">Un fichier JSON que le client ne pouvait pas toucher</h3>
+            <div class="prose">
+              <p>
+                J'avais choisi de stocker les avis clients dans un fichier JSON modifiable à la
+                main, ce qui me paraissait simple. Ce l'était pour moi. Pour l'artisan, une virgule
+                mal placée suffisait à casser l'affichage de la page d'accueil, sans qu'il puisse
+                comprendre pourquoi.
+              </p>
+              <p>
+                J'ai développé un formulaire d'administration qui écrit le fichier à sa place, avec
+                validation du format de date et limitation du nombre de photos. Le stockage n'a pas
+                changé, l'interface si.
+              </p>
+              <p>
+                <strong>Ce que j'en retiens.</strong> « Simple » n'a de sens que rapporté à la
+                personne qui s'en sert. J'avais optimisé ma propre facilité de développement, pas
+                l'usage réel.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <h3 class="h3">Traduire une demande orale en spécifications</h3>
+            <div class="prose">
+              <p>
+                L'artisan ne m'a jamais parlé de fonctionnalités. Il m'a parlé de son métier, de ses
+                clients, de ce qui le distingue de ses concurrents. Transformer cela en une liste de
+                pages et d'écrans a pris plus de temps que je ne l'avais prévu, et j'ai dû revenir
+                le voir plusieurs fois.
+              </p>
+              <p>
+                Le déclic a été de cesser de demander « que voulez-vous sur le site ? » pour
+                demander « que fait quelqu'un qui vous appelle à deux heures du matin ? ». La
+                seconde question, il savait y répondre.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Compétences du référentiel -->
+    <section id="competences" class="border-t border-line py-16 sm:py-24">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">07</span> Référentiel</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-8 max-w-[22ch]">
+          Compétences du BTS SIO mobilisées
+        </h2>
+
+        <div class="table-scroll" data-collapse="26">
+          <table class="data-table">
+            <caption class="sr-only">Compétences du référentiel BTS SIO mobilisées pendant le stage</caption>
+            <thead>
+              <tr>
+                <th scope="col">Compétence</th>
+                <th scope="col">Bloc</th>
+                <th scope="col">Ce que j'ai fait concrètement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Développer la présence en ligne de l'organisation</td>
+                <td class="font-mono text-[.7rem]">Bloc 1</td>
+                <td>Création intégrale du site d'une entreprise qui n'en avait aucun, avec
+                  référencement local et données structurées.</td>
+              </tr>
+              <tr>
+                <td>Travailler en mode projet</td>
+                <td class="font-mono text-[.7rem]">Bloc 1</td>
+                <td>Cahier des charges défini avec le maître de stage, puis conduite des étapes
+                  jusqu'à la livraison.</td>
+              </tr>
+              <tr>
+                <td>Mettre à disposition des utilisateurs un service informatique</td>
+                <td class="font-mono text-[.7rem]">Bloc 1</td>
+                <td>Mise en production, remise des accès d'administration et documentation
+                  d'utilisation.</td>
+              </tr>
+              <tr>
+                <td>Organiser son développement professionnel</td>
+                <td class="font-mono text-[.7rem]">Bloc 1</td>
+                <td>Rédaction d'une documentation technique complète du travail réalisé.</td>
+              </tr>
+              <tr>
+                <td>Concevoir et développer une solution applicative</td>
+                <td class="font-mono text-[.7rem]">Bloc 2 · SLAM</td>
+                <td>Architecture MVC conçue puis développée, du routeur aux vues, site public et
+                  back-office.</td>
+              </tr>
+              <tr>
+                <td>Assurer la maintenance corrective ou évolutive d'une solution applicative</td>
+                <td class="font-mono text-[.7rem]">Bloc 2 · SLAM</td>
+                <td>Correction des anomalies remontées après la mise en service, au-delà de la fin
+                  du stage.</td>
+              </tr>
+              <tr>
+                <td>Gérer les données</td>
+                <td class="font-mono text-[.7rem]">Bloc 2 · SLAM</td>
+                <td>Conception du schéma MySQL, accès en requêtes préparées, et choix assumé du JSON
+                  pour les données à faible volume.</td>
+              </tr>
+              <tr>
+                <td>Protéger les données à caractère personnel</td>
+                <td class="font-mono text-[.7rem]">Bloc 3</td>
+                <td>Coordonnées transmises par le formulaire de contact stockées hors de la racine
+                  web, accessibles uniquement après authentification.</td>
+              </tr>
+              <tr>
+                <td>Garantir la disponibilité, l'intégrité et la confidentialité des services</td>
+                <td class="font-mono text-[.7rem]">Bloc 3</td>
+                <td>Protection contre l'injection SQL, le XSS, le CSRF et le dépôt de fichiers
+                  piégés, empreintes bcrypt et régénération de session.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bilan -->
+    <section id="bilan" class="border-t border-line py-16 sm:py-24 band">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">08</span> Bilan</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-10 max-w-[20ch]">
+          Ce que ces six semaines ont changé
+        </h2>
+
+        <div class="prose">
+          <p>
+            Avant ce stage, j'écrivais des applications pour des sujets d'exercice. Ici, quelqu'un
+            attendait le résultat, s'en sert tous les jours, et me dit quand quelque chose ne va
+            pas. C'est la principale différence que j'en retiens.
+          </p>
+          <p>
+            Sur le plan technique, construire l'architecture m'a donné une compréhension que je
+            n'aurais pas eue en installant un outil tout fait. Je sais maintenant ce qu'un
+            framework automatise, parce que je l'ai écrit une fois. La <strong>sécurité</strong>
+            est l'autre acquis : tant qu'aucun espace d'administration n'était exposé, ces questions
+            restaient théoriques.
+          </p>
+          <p>
+            La maintenance après la fin du stage m'a appris le reste. Les retours de l'artisan
+            portaient sur des détails que je n'avais pas vus, parce que je connaissais le site par
+            cœur et qu'il le découvrait.
+          </p>
+        </div>
+
+        <h3 class="h3 mt-14">Ce que je referais autrement</h3>
+        <div class="prose">
+          <ul>
+            <li>
+              <strong>Faire tester par quelqu'un d'autre plus tôt.</strong> J'ai livré le
+              back-office quasiment terminé. Une démonstration à mi-parcours aurait révélé le
+              problème du fichier JSON des avis avant que j'aie à le reprendre.
+            </li>
+            <li>
+              <strong>Limiter les tentatives de connexion dès le départ.</strong> C'est la première
+              chose qu'un attaquant essaie, et je l'ai laissée de côté en me disant que j'y
+              reviendrais.
+            </li>
+            <li>
+              <strong>Écrire la documentation au fil de l'eau.</strong> La rédiger à la fin m'a
+              coûté plus cher que si je l'avais tenue à jour semaine après semaine.
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-14">
+          <a class="btn btn-primary" href="https://adyl-plomberie.fr/" target="_blank" rel="noopener">
+            Voir le site en ligne <span aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="btn" href="./index.html#projets">Retour aux projets</a>
+          <span class="btn-note">Code source privé, à la demande du client</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-line py-10">
+    <div class="wrap flex flex-col sm:flex-row gap-3 justify-between font-mono text-[.7rem] text-dim">
+      <p class="ps-prompt">PS C:\ergeshov&gt; <span class="cmd">exit</span></p>
+      <p>Baimurat Ergeshov · <span id="year"></span></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

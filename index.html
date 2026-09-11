@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Baimurat Ergeshov, étudiant BTS SIO SLAM</title>
+  <meta name="description"
+    content="Portfolio de Baimurat Ergeshov, étudiant en BTS SIO option SLAM à Vert-Saint-Denis. Applications web en PHP et JavaScript, projets, stage et veille technologique." />
+  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Baimurat Ergeshov, étudiant BTS SIO SLAM" />
+  <meta property="og:description"
+    content="Applications web en PHP et JavaScript. Projets, stage et veille technologique." />
+  <meta property="og:image" content="./img/portfolio.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./assets/tw-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Sora:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="./assets/style.css" />
+
+  <!-- Sans defer : imgFail doit exister avant la première image -->
+  <script src="./assets/script.js"></script>
+</head>
+
+<body class="bg-bg text-ink font-sans antialiased has-rail">
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="border-b border-line">
+    <div class="wrap flex flex-wrap items-center justify-between gap-y-2 py-3 sm:h-16 sm:py-0">
+      <a href="./index.html" class="font-mono text-[.78rem] text-ink hover:text-accent transition-colors">
+        baimurat<span class="text-dim">.ergeshov</span>
+      </a>
+      <nav aria-label="Navigation principale" class="flex items-center gap-4 sm:gap-7 font-mono text-[.72rem] text-mut">
+        <a href="#intro" class="text-accent" aria-current="page">Accueil</a>
+        <a href="#projets" class="hover:text-ink transition-colors">Projets</a>
+        <a href="./stage.html" class="hover:text-ink transition-colors">Stage</a>
+        <a href="./veille.html" class="hover:text-ink transition-colors">Veille</a>
+        <a href="#contact" class="hover:text-ink transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="rail hidden xl:block" aria-label="Sommaire">
+    <a href="#intro" class="is-active"><span class="bar" aria-hidden="true"></span>Intro</a>
+    <a href="#apropos"><span class="bar" aria-hidden="true"></span>À propos</a>
+    <a href="#competences"><span class="bar" aria-hidden="true"></span>Compétences</a>
+    <a href="#projets"><span class="bar" aria-hidden="true"></span>Projets</a>
+    <a href="#contact"><span class="bar" aria-hidden="true"></span>Contact</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Intro -->
+    <section id="intro" class="wrap pt-20 pb-24 sm:pt-32 sm:pb-36">
+
+      <p class="ps-prompt mb-10">PS C:\ergeshov&gt; <span class="cmd">Get-Member</span>
+        <span class="arg">-Name Baimurat</span>
+      </p>
+
+      <h1 class="display text-[clamp(2.6rem,8.5vw,6rem)]">
+        Baimurat<br />
+        <em class="text-accent">Ergeshov</em>
+      </h1>
+
+      <p class="lead mt-10">
+        Étudiant en <strong>BTS SIO, option SLAM</strong>. Je développe des applications web en PHP
+        et en JavaScript, et je maquette mes interfaces avant de les coder. Je cherche un stage pour
+        ma deuxième année.
+      </p>
+
+      <dl class="mt-14 font-mono text-[.75rem] leading-[2.4] border-t border-line pt-5 max-w-md">
+        <div class="flex gap-4">
+          <dt class="text-dim w-24 shrink-0">Lieu</dt>
+          <dd>Vert-Saint-Denis (77)</dd>
+        </div>
+        <div class="flex gap-4">
+          <dt class="text-dim w-24 shrink-0">Cursus</dt>
+          <dd>BTS SIO · SLAM</dd>
+        </div>
+        <div class="flex gap-4">
+          <dt class="text-dim w-24 shrink-0">Statut</dt>
+          <dd class="text-accent">Recherche de stage</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- À propos -->
+    <section id="apropos" class="border-t border-line py-20 sm:py-28">
+      <div class="wrap reveal">
+
+        <p class="eyebrow"><span class="n">01</span> À propos</p>
+        <h2 class="display text-[clamp(1.9rem,4.5vw,3.1rem)] mb-10">
+          Je préfère comprendre<br />que copier.
+        </h2>
+
+        <div class="grid lg:grid-cols-[1fr_20rem] gap-12 lg:gap-16 items-start">
+
+          <div class="prose">
+            <p>
+              Pendant mon stage, j'ai choisi de structurer le site en <strong>architecture MVC</strong>
+              plutôt que de partir d'un CMS : un routeur, des contrôleurs, des vues séparées.
+              C'était plus long, et ça m'a fait comprendre ce qu'un framework automatise.
+            </p>
+            <p>
+              Je code depuis le lycée, surtout en PHP et en JavaScript. En dehors du code, je fais
+              du design (Figma, Photoshop, Illustrator), ce qui m'évite de livrer des interfaces
+              que personne n'a envie d'utiliser.
+            </p>
+            <p>
+              Ce que je cherche : un stage où je serai <strong>relu, corrigé et poussé</strong> sur
+              des sujets que je ne maîtrise pas encore.
+            </p>
+          </div>
+
+          <aside class="border border-line p-7 bg-bgAlt">
+            <p class="font-mono text-[.65rem] uppercase tracking-[.15em] text-dim mb-6">
+              Ce que je sais mener seul
+            </p>
+            <ul class="space-y-5 text-[.85rem] text-mut leading-relaxed">
+              <li class="flex gap-4">
+                <span class="text-accent font-mono text-[.7rem] pt-1">01</span>
+                Partir d'un besoin flou et en sortir un cahier des charges
+              </li>
+              <li class="flex gap-4">
+                <span class="text-accent font-mono text-[.7rem] pt-1">02</span>
+                Structurer une application PHP en Modèle-Vue-Contrôleur
+              </li>
+              <li class="flex gap-4">
+                <span class="text-accent font-mono text-[.7rem] pt-1">03</span>
+                Concevoir une base MySQL et écrire le CRUD qui va avec
+              </li>
+              <li class="flex gap-4">
+                <span class="text-accent font-mono text-[.7rem] pt-1">04</span>
+                Consommer une API REST et gérer ses erreurs
+              </li>
+              <li class="flex gap-4">
+                <span class="text-accent font-mono text-[.7rem] pt-1">05</span>
+                Ouvrir un espace d'administration sans ouvrir une faille
+              </li>
+              <li class="flex gap-4">
+                <span class="text-accent font-mono text-[.7rem] pt-1">06</span>
+                Maquetter avant de coder, puis intégrer ma propre maquette
+              </li>
+            </ul>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences" class="border-t border-line py-20 sm:py-28 band">
+      <div class="wrap reveal">
+
+        <p class="eyebrow"><span class="n">02</span> Compétences</p>
+        <h2 class="display text-[clamp(1.9rem,4.5vw,3.1rem)] mb-5">Ce que je sais faire,<br />et où je l'ai prouvé.</h2>
+        <p class="text-dim text-[.9rem] mb-12 measure font-light leading-relaxed">
+          Une technologie que je ne peux rattacher à aucune réalisation n'a rien à faire sur cette page.
+        </p>
+
+        <div class="skills-grid" data-collapse="26">
+
+          <div class="skill">
+            <h3 class="skill-name">PHP</h3>
+            <p class="skill-where">Adyl Plombier · Salariés Chambord · MovieDB</p>
+            <p class="skill-proof">Quatre projets, dont un livré et maintenu pour un client réel.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name">Architecture MVC</h3>
+            <p class="skill-where">Adyl Plombier · Gestion des stagiaires</p>
+            <p class="skill-proof">Routage, contrôleurs et vues séparés sur deux applications.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name">MySQL et SQL</h3>
+            <p class="skill-where">Salariés Chambord · Hôtel Chambord</p>
+            <p class="skill-proof">Conception du schéma, puis CRUD complet sur les données.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name">JavaScript</h3>
+            <p class="skill-where">MovieDB · ce portfolio</p>
+            <p class="skill-proof">Interactions d'interface et validation de formulaires côté client.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name">API REST et JSON</h3>
+            <p class="skill-where">MovieDB · passerelle Python / PHP</p>
+            <p class="skill-proof">Consommation de l'API TMDb, pagination, gestion des réponses vides.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name">HTML, CSS, Tailwind</h3>
+            <p class="skill-where">Tous les projets ci-dessous</p>
+            <p class="skill-proof">Intégration responsive, contrastes et navigation clavier vérifiés.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name">Sécurité applicative</h3>
+            <p class="skill-where">Adyl Plombier</p>
+            <p class="skill-proof">Requêtes préparées, jeton anti-CSRF, échappement des sorties, contrôle des fichiers
+              déposés.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name">Référencement</h3>
+            <p class="skill-where">Adyl Plombier</p>
+            <p class="skill-proof">Données structurées Schema.org, plan du site, balises de description par page.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name">Git, Figma, Photoshop</h3>
+            <p class="skill-where">Versionnement et maquettage</p>
+            <p class="skill-proof">Maquettes d'Adyl Plombier validées avec le client avant le développement.</p>
+          </div>
+
+          <div class="skill">
+            <h3 class="skill-name text-dim">Notions</h3>
+            <p class="skill-where">Python · Linux</p>
+            <p class="skill-proof text-dim">Un projet d'échange de données entre Python et PHP, Linux au quotidien.
+              Je les annonce comme notions, pas comme compétences.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="border-t border-line py-20 sm:py-28">
+      <div class="wrap reveal">
+
+        <p class="eyebrow"><span class="n">03</span> Projets</p>
+        <h2 class="display text-[clamp(1.9rem,4.5vw,3.1rem)] mb-5">Ce que j'ai construit</h2>
+        <p class="text-dim text-[.9rem] mb-14 measure font-light leading-relaxed">
+          Chaque projet ouvre une fiche détaillée avec ses captures et ses liens.
+        </p>
+
+        <div class="proj-list" data-collapse="28">
+
+          <article class="proj">
+            <div class="flex items-start gap-5 sm:gap-8 pr-0 xl:pr-[270px]">
+              <span class="proj-num pt-3">01</span>
+              <div class="flex-1">
+                <h3 class="proj-title">
+                  <button type="button" class="proj-open" data-dialog="dlg-adyl">
+                    Site et back-office Adyl Plombier
+                  </button>
+                </h3>
+                <p class="mt-3 text-mut text-[.9rem] font-light leading-[1.8] max-w-[38rem]">
+                  Site public et espace d'administration pour un plombier d'urgence, sur une
+                  architecture MVC sans framework. Mené seul pendant mon stage, du cahier des
+                  charges à la maintenance, et toujours en production.
+                </p>
+                <p class="proj-meta mt-4">PHP 8 · MVC · MySQL · 2025 · Stage, en autonomie</p>
+                <p class="proj-cta">Voir la fiche <span aria-hidden="true">&rarr;</span></p>
+              </div>
+            </div>
+            <img class="proj-thumb" src="./img/adyl_plombier_img1.png" alt="" aria-hidden="true"
+              onerror="this.remove()" />
+          </article>
+
+          <article class="proj">
+            <div class="flex items-start gap-5 sm:gap-8 pr-0 xl:pr-[270px]">
+              <span class="proj-num pt-3">02</span>
+              <div class="flex-1">
+                <h3 class="proj-title">
+                  <button type="button" class="proj-open" data-dialog="dlg-salaries">
+                    Gestion des salariés, Hôtel Chambord
+                  </button>
+                </h3>
+                <p class="mt-3 text-mut text-[.9rem] font-light leading-[1.8] max-w-[38rem]">
+                  Application CRUD complète : ajout, liste, modification, suppression, sur le
+                  personnel d'un hôtel fictif.
+                </p>
+                <p class="proj-meta mt-4">PHP · MySQL · JavaScript · 2025 · Projet individuel</p>
+                <p class="proj-cta">Voir la fiche <span aria-hidden="true">&rarr;</span></p>
+              </div>
+            </div>
+            <img class="proj-thumb" src="./img/chambord_salaries.webp" alt="" aria-hidden="true"
+              onerror="this.remove()" />
+          </article>
+
+          <article class="proj">
+            <div class="flex items-start gap-5 sm:gap-8 pr-0 xl:pr-[270px]">
+              <span class="proj-num pt-3">03</span>
+              <div class="flex-1">
+                <h3 class="proj-title">
+                  <button type="button" class="proj-open" data-dialog="dlg-moviedb">MovieDB</button>
+                </h3>
+                <p class="mt-3 text-mut text-[.9rem] font-light leading-[1.8] max-w-[38rem]">
+                  Catalogue de films et séries alimenté par l'API TMDb : populaires, mieux notés,
+                  navigation par genre, fiches détaillées.
+                </p>
+                <p class="proj-meta mt-4">PHP · API REST · Bootstrap · 2025 · Projet individuel</p>
+                <p class="proj-cta">Voir la fiche <span aria-hidden="true">&rarr;</span></p>
+              </div>
+            </div>
+            <img class="proj-thumb" src="./img/movieDb.webp" alt="" aria-hidden="true" onerror="this.remove()" />
+          </article>
+
+          <article class="proj">
+            <div class="flex items-start gap-5 sm:gap-8 pr-0 xl:pr-[270px]">
+              <span class="proj-num pt-3">04</span>
+              <div class="flex-1">
+                <h3 class="proj-title">
+                  <button type="button" class="proj-open" data-dialog="dlg-hotel">Site Hôtel Chambord</button>
+                </h3>
+                <p class="mt-3 text-mut text-[.9rem] font-light leading-[1.8] max-w-[38rem]">
+                  Site multi-pages réalisé en groupe : chambres, restaurant, spa, réservation,
+                  recrutement, espace d'administration.
+                </p>
+                <p class="proj-meta mt-4">PHP · MySQL · Bootstrap · 2025 · Travail en équipe</p>
+                <p class="proj-cta">Voir la fiche <span aria-hidden="true">&rarr;</span></p>
+              </div>
+            </div>
+            <img class="proj-thumb" src="./img/chambord.webp" alt="" aria-hidden="true" onerror="this.remove()" />
+          </article>
+
+          <article class="proj">
+            <div class="flex items-start gap-5 sm:gap-8 pr-0 xl:pr-[270px]">
+              <span class="proj-num pt-3">05</span>
+              <div class="flex-1">
+                <h3 class="proj-title">
+                  <button type="button" class="proj-open" data-dialog="dlg-stagiaires">
+                    Gestion des stagiaires en MVC
+                  </button>
+                </h3>
+                <p class="mt-3 text-mut text-[.9rem] font-light leading-[1.8] max-w-[38rem]">
+                  Suivi de stagiaires, de matières et d'évaluations, avec tableau de bord
+                  d'administration.
+                </p>
+                <p class="proj-meta mt-4">PHP · MVC · MySQL · 2025 · Projet individuel</p>
+                <p class="proj-cta">Voir la fiche <span aria-hidden="true">&rarr;</span></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="flex items-start gap-5 sm:gap-8 pr-0 xl:pr-[270px]">
+              <span class="proj-num pt-3">06</span>
+              <div class="flex-1">
+                <h3 class="proj-title">
+                  <button type="button" class="proj-open" data-dialog="dlg-passerelle">
+                    Passerelle Python / PHP
+                  </button>
+                </h3>
+                <p class="mt-3 text-mut text-[.9rem] font-light leading-[1.8] max-w-[38rem]">
+                  Faire dialoguer deux langages back-end par échange de JSON autour d'une même
+                  base de données.
+                </p>
+                <p class="proj-meta mt-4">Python · PHP · JSON · MySQL · 2025 · Projet individuel</p>
+                <p class="proj-cta">Voir la fiche <span aria-hidden="true">&rarr;</span></p>
+              </div>
+            </div>
+            <img class="proj-thumb" src="./img/php_python.webp" alt="" aria-hidden="true" onerror="this.remove()" />
+          </article>
+
+          <article class="proj">
+            <div class="flex items-start gap-5 sm:gap-8 pr-0 xl:pr-[270px]">
+              <span class="proj-num pt-3">07</span>
+              <div class="flex-1">
+                <h3 class="proj-title">
+                  <button type="button" class="proj-open" data-dialog="dlg-portfolio">Ce portfolio</button>
+                </h3>
+                <p class="mt-3 text-mut text-[.9rem] font-light leading-[1.8] max-w-[38rem]">
+                  Le site que vous consultez. Il me sert aussi de terrain d'application pour ma
+                  veille sur l'accessibilité numérique.
+                </p>
+                <p class="proj-meta mt-4">HTML · Tailwind · JavaScript · 2025 · Projet individuel</p>
+                <p class="proj-cta">Voir la fiche <span aria-hidden="true">&rarr;</span></p>
+              </div>
+            </div>
+            <img class="proj-thumb" src="./img/portfolio.webp" alt="" aria-hidden="true" onerror="this.remove()" />
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="border-t border-line py-20 sm:py-28">
+      <div class="wrap reveal">
+
+        <p class="eyebrow"><span class="n">04</span> Contact</p>
+        <h2 class="display text-[clamp(2rem,5.5vw,3.8rem)] mb-6 max-w-[22ch]">
+          Je cherche un stage pour l'an prochain.
+        </h2>
+        <p class="text-mut font-light leading-[1.8] measure mb-14 text-[.95rem]">
+          Une opportunité, une alternance, ou simplement une question sur un de ces projets :
+          écrivez-moi, je répondrai.
+        </p>
+
+        <ul class="font-mono text-[.8rem] max-w-2xl">
+          <li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-8 border-t border-line py-5">
+            <span class="text-dim w-24 shrink-0">Email</span>
+            <a href="mailto:baimurat.ergeshov123@gmail.com"
+              class="text-ink hover:text-accent transition-colors break-all">baimurat.ergeshov123@gmail.com</a>
+          </li>
+          <li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-8 border-t border-line py-5">
+            <span class="text-dim w-24 shrink-0">GitHub</span>
+            <a href="https://github.com/baimuratergeshov" target="_blank" rel="noopener"
+              class="text-ink hover:text-accent transition-colors">github.com/baimuratergeshov</a>
+          </li>
+          <li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-8 border-t border-b border-line py-5">
+            <span class="text-dim w-24 shrink-0">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/baimurat-ergeshov-29b9013a7/" target="_blank" rel="noopener"
+              class="text-ink hover:text-accent transition-colors">Baimurat Ergeshov</a>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-line py-10">
+    <div class="wrap flex flex-col sm:flex-row gap-3 justify-between font-mono text-[.7rem] text-dim">
+      <p class="ps-prompt">PS C:\ergeshov&gt; <span class="cmd">exit</span></p>
+      <p>Baimurat Ergeshov · <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <!-- Fiches projet -->
+
+  <dialog id="dlg-adyl" class="modal" aria-labelledby="t-adyl">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
+      <p class="eyebrow"><span class="n">01</span> Projet</p>
+      <h2 id="t-adyl" class="display text-[clamp(1.6rem,4vw,2.4rem)]">Site et back-office Adyl Plombier</h2>
+      <p class="proj-meta mt-4">PHP 8 · MVC · MySQL · JSON · Tailwind · Mai à juin 2025 · Stage de première année</p>
+
+      <div class="gallery">
+        <img src="./img/adyl_plombier_img1.png" alt="Page d'accueil du site Adyl Plombier" onerror="imgFail(this)" />
+        <img src="./img/adyl_plombier_img2.png" alt="Page de présentation des prestations" onerror="imgFail(this)" />
+        <img src="./img/adyl_plombier_img3.png" alt="Formulaire de contact du site" onerror="imgFail(this)" />
+        <img src="./img/adyl_plombier_img4.png" alt="Affichage du site sur mobile" onerror="imgFail(this)" />
+      </div>
+
+      <div class="modal-text">
+        <p>
+          <strong>Adyl Plombier</strong> intervient en urgence à Paris et en Île-de-France, jour et
+          nuit. L'entreprise n'avait aucune présence en ligne et voulait être trouvée par des
+          particuliers qui cherchent un dépanneur depuis leur téléphone, souvent dans l'urgence.
+        </p>
+        <p>
+          J'ai livré <strong>six pages publiques</strong> (accueil, services, zones d'intervention,
+          galerie, blog, contact) et surtout un <strong>espace d'administration</strong> permettant
+          à l'artisan de gérer seul ses articles, ses photos, ses avis clients et les messages
+          reçus. Une vitrine statique l'aurait obligé à me rappeler à chaque photo ajoutée.
+        </p>
+        <p>
+          L'ensemble repose sur une <strong>architecture MVC</strong> que j'ai structurée moi-même
+          plutôt que sur un CMS ou un framework : point d'entrée unique, routeur, contrôleurs,
+          modèles et vues séparés. Seul le dossier public est exposé sur le web, le reste du code et
+          les données vivent au-dessus de la racine web.
+        </p>
+        <p>
+          Ouvrir un espace d'administration sur internet m'a obligé à traiter la
+          <strong>sécurité</strong> pour de bon : requêtes préparées, jeton anti-CSRF, échappement
+          systématique des sorties, vérification du type réel des fichiers déposés, empreintes
+          bcrypt et régénération de session.
+        </p>
+        <p>
+          Après la fin du stage, j'ai continué à assurer la <strong>maintenance</strong> du site.
+          C'est la partie du projet dont je suis le plus satisfait : livrer n'était pas la fin du
+          travail.
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <a class="btn btn-primary" href="https://adyl-plomberie.fr/" target="_blank" rel="noopener">
+          Voir le site en ligne <span aria-hidden="true">&nearr;</span>
+        </a>
+        <a class="btn" href="./stage.html">Lire le rapport de stage</a>
+        <span class="btn-note">Code source privé, à la demande du client</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-salaries" class="modal" aria-labelledby="t-salaries">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
+      <p class="eyebrow"><span class="n">02</span> Projet</p>
+      <h2 id="t-salaries" class="display text-[clamp(1.6rem,4vw,2.4rem)]">Gestion des salariés, Hôtel Chambord</h2>
+      <p class="proj-meta mt-4">PHP · MySQL · JavaScript · 2025 · Projet individuel</p>
+
+      <div class="gallery">
+        <img src="./img/chambord_salaries.webp"
+          alt="Liste des salariés avec les actions de modification et de suppression" onerror="imgFail(this)" />
+      </div>
+
+      <div class="modal-text">
+        <p>
+          Application de gestion du personnel d'un hôtel fictif. Elle couvre les quatre opérations
+          d'un <strong>CRUD</strong> : ajout d'un salarié, consultation de la liste, modification
+          d'une fiche et suppression.
+        </p>
+        <p>
+          Le code est organisé en partials réutilisables pour l'en-tête et le pied de page, et
+          sépare les traitements de formulaire, rangés dans <strong>process/</strong>, des fonctions
+          transverses rangées dans <strong>utils/</strong>. C'est le projet sur lequel j'ai compris
+          l'intérêt de ne pas tout écrire dans un seul fichier.
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <a class="btn" href="https://github.com/baimuratergeshov/salaries_chambord" target="_blank" rel="noopener">
+          Voir le code sur GitHub <span aria-hidden="true">&nearr;</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-moviedb" class="modal" aria-labelledby="t-moviedb">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
+      <p class="eyebrow"><span class="n">03</span> Projet</p>
+      <h2 id="t-moviedb" class="display text-[clamp(1.6rem,4vw,2.4rem)]">MovieDB</h2>
+      <p class="proj-meta mt-4">PHP · API REST · Bootstrap · 2025 · Projet individuel</p>
+
+      <div class="gallery">
+        <img src="./img/movieDb.webp" alt="Accueil de MovieDB présentant les films populaires" onerror="imgFail(this)" />
+      </div>
+
+      <div class="modal-text">
+        <p>
+          Site de consultation de films et de séries alimenté par l'<strong>API TMDb</strong>. Il
+          propose les contenus populaires, les mieux notés, une navigation par genre, une fiche
+          détaillée par film et une fiche par acteur.
+        </p>
+        <p>
+          Ce projet m'a servi à comprendre la consommation d'une API REST côté serveur : construire
+          la requête, lire la réponse JSON, et surtout prévoir les cas où l'API ne renvoie rien ou
+          répond en erreur. Un affichage qui suppose que la réponse est toujours correcte finit
+          toujours par casser.
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <a class="btn" href="https://github.com/baimuratergeshov/movieDB" target="_blank" rel="noopener">
+          Voir le code sur GitHub <span aria-hidden="true">&nearr;</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-hotel" class="modal" aria-labelledby="t-hotel">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
+      <p class="eyebrow"><span class="n">04</span> Projet</p>
+      <h2 id="t-hotel" class="display text-[clamp(1.6rem,4vw,2.4rem)]">Site Hôtel Chambord</h2>
+      <p class="proj-meta mt-4">PHP · MySQL · Bootstrap · 2025 · Travail en équipe</p>
+
+      <div class="gallery">
+        <img src="./img/chambord.webp" alt="Page d'accueil du site de l'Hôtel Chambord" onerror="imgFail(this)" />
+      </div>
+
+      <div class="modal-text">
+        <p>
+          Site multi-pages pour un hôtel fictif, réalisé en groupe. Il présente les chambres, le
+          restaurant, le spa et les activités, et propose la réservation ainsi qu'une section
+          recrutement.
+        </p>
+        <p>
+          Côté applicatif : inscription et connexion des visiteurs, espace d'administration, et
+          gestion des avis clients en PHP.
+        </p>
+        <p>
+          C'est le projet sur lequel j'ai le plus travaillé la <strong>répartition des tâches</strong>
+          et l'intégration du travail de plusieurs personnes dans un même dépôt Git. Techniquement
+          ce n'est pas le plus ambitieux, mais c'est celui qui ressemble le plus à un vrai contexte
+          d'équipe.
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <a class="btn" href="https://github.com/baimuratergeshov/Hotel-Chambord" target="_blank" rel="noopener">
+          Voir le code sur GitHub <span aria-hidden="true">&nearr;</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-stagiaires" class="modal" aria-labelledby="t-stagiaires">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
+      <p class="eyebrow"><span class="n">05</span> Projet</p>
+      <h2 id="t-stagiaires" class="display text-[clamp(1.6rem,4vw,2.4rem)]">Gestion des stagiaires en MVC</h2>
+      <p class="proj-meta mt-4">PHP · MVC · MySQL · Bootstrap · 2025 · Projet individuel</p>
+
+      <div class="gallery">
+        <img src="./img/stagiaires_mvc.png" alt="Tableau de bord de gestion des stagiaires" onerror="imgFail(this)" />
+      </div>
+
+      <div class="modal-text">
+        <p>
+          Application de suivi de stagiaires, de matières et d'évaluations, structurée en
+          <strong>Modèle-Vue-Contrôleur</strong>. Elle comprend un tableau de bord d'administration
+          et une validation des formulaires côté client.
+        </p>
+        <p>
+          L'objectif était de séparer nettement les responsabilités : le contrôleur reçoit la
+          requête et décide, le modèle est le seul à parler à la base de données, la vue ne fait
+          qu'afficher. C'est ce découpage que j'ai réutilisé ensuite pendant mon stage.
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <span class="btn-note">Lien du dépôt à venir</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-passerelle" class="modal" aria-labelledby="t-passerelle">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
+      <p class="eyebrow"><span class="n">06</span> Projet</p>
+      <h2 id="t-passerelle" class="display text-[clamp(1.6rem,4vw,2.4rem)]">Passerelle Python / PHP</h2>
+      <p class="proj-meta mt-4">Python · PHP · JSON · MySQL · 2025 · Projet individuel</p>
+
+      <div class="gallery">
+        <img src="./img/php_python.webp" alt="Échange de données entre le script Python et l'application PHP"
+          onerror="imgFail(this)" />
+      </div>
+
+      <div class="modal-text">
+        <p>
+          Projet d'intégration entre deux langages back-end : un script <strong>Python</strong> et
+          une application <strong>PHP</strong> échangent des données au format JSON autour d'une
+          base de données commune.
+        </p>
+        <p>
+          L'ensemble comprend un formulaire web et la persistance des données en base. Il m'a permis
+          de comprendre qu'un format d'échange commun suffit à faire coopérer deux technologies qui
+          ne partagent rien d'autre.
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <span class="btn-note">Lien du dépôt à venir</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-portfolio" class="modal" aria-labelledby="t-portfolio">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
+      <p class="eyebrow"><span class="n">07</span> Projet</p>
+      <h2 id="t-portfolio" class="display text-[clamp(1.6rem,4vw,2.4rem)]">Ce portfolio</h2>
+      <p class="proj-meta mt-4">HTML · Tailwind CSS · JavaScript · 2025 · Projet individuel</p>
+
+      <div class="gallery">
+        <img src="./img/portfolio.webp" alt="Vue d'ensemble du portfolio" onerror="imgFail(this)" />
+      </div>
+
+      <div class="modal-text">
+        <p>
+          Le site que vous consultez, en HTML, Tailwind CSS et JavaScript.
+        </p>
+        <p>
+          Il me sert également de terrain d'application pour ma <strong>veille technologique sur
+            l'accessibilité numérique</strong> : contrastes mesurés au ratio défini par les WCAG,
+          navigation complète au clavier, structure sémantique, et respect de la préférence système
+          de réduction des animations.
+        </p>
+        <p>
+          Les fiches projet que vous lisez en ce moment s'appuient sur l'élément
+          <strong>&lt;dialog&gt;</strong> natif du navigateur, qui gère le piège à focus et la
+          fermeture au clavier sans code supplémentaire.
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <a class="btn" href="./veille.html">Lire ma veille sur l'accessibilité</a>
+        <span class="btn-note">Lien du dépôt à venir</span>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Visionneuse d'images -->
+  <dialog id="lightbox" class="lightbox" aria-label="Image agrandie">
+
+    <div class="lb-stage" id="lbStage">
+      <img id="lbImg" src="" alt="" />
+    </div>
+
+    <button type="button" class="lb-btn lb-close" data-lb-close aria-label="Fermer l'image">&#10005;</button>
+    <button type="button" class="lb-btn lb-nav lb-prev" data-lb-prev aria-label="Image précédente">&#8249;</button>
+    <button type="button" class="lb-btn lb-nav lb-next" data-lb-next aria-label="Image suivante">&#8250;</button>
+
+    <div class="lb-bar">
+      <p class="lb-caption">
+        <span id="lbCaption"></span><span class="lb-count" id="lbCount"></span>
+      </p>
+      <div class="lb-tools">
+        <span class="lb-hint">Molette pour zoomer, glisser pour déplacer</span>
+        <button type="button" data-lb-zoom="out" aria-label="Dézoomer">&minus;</button>
+        <span class="lb-zoom" id="lbZoom">100 %</span>
+        <button type="button" data-lb-zoom="in" aria-label="Zoomer">+</button>
+        <button type="button" data-lb-zoom="reset">Réinitialiser</button>
+      </div>
+    </div>
+  </dialog>
+
+</body>
+
+</html>
