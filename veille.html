@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Veille technologique : l'accessibilité numérique, Baimurat Ergeshov</title>
+  <meta name="description"
+    content="Veille technologique de BTS SIO sur l'accessibilité numérique : RGAA, WCAG, European Accessibility Act, dispositif de veille, sources et audit appliqué à ce portfolio." />
+  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Veille technologique : l'accessibilité numérique" />
+  <meta property="og:description"
+    content="RGAA, WCAG et European Accessibility Act, appliqués concrètement à l'audit de ce portfolio." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./assets/tw-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Sora:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="./assets/style.css" />
+
+  <script src="./assets/script.js"></script>
+</head>
+
+<body class="bg-bg text-ink font-sans antialiased has-rail">
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="border-b border-line">
+    <div class="wrap flex flex-wrap items-center justify-between gap-y-2 py-3 sm:h-16 sm:py-0">
+      <a href="./index.html" class="font-mono text-[.78rem] text-ink hover:text-accent transition-colors">
+        baimurat<span class="text-dim">.ergeshov</span>
+      </a>
+      <nav aria-label="Navigation principale" class="flex items-center gap-4 sm:gap-7 font-mono text-[.72rem] text-mut">
+        <a href="./index.html" class="hover:text-ink transition-colors">Accueil</a>
+        <a href="./index.html#projets" class="hover:text-ink transition-colors">Projets</a>
+        <a href="./stage.html" class="hover:text-ink transition-colors">Stage</a>
+        <a href="./veille.html" class="text-accent" aria-current="page">Veille</a>
+        <a href="./index.html#contact" class="hover:text-ink transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="rail hidden xl:block" aria-label="Sommaire">
+    <a href="#sujet" class="is-active"><span class="bar" aria-hidden="true"></span>Le sujet</a>
+    <a href="#dispositif"><span class="bar" aria-hidden="true"></span>Dispositif</a>
+    <a href="#sources"><span class="bar" aria-hidden="true"></span>Sources</a>
+    <a href="#breves"><span class="bar" aria-hidden="true"></span>Ce que j'ai retenu</a>
+    <a href="#audit"><span class="bar" aria-hidden="true"></span>Audit</a>
+    <a href="#glossaire"><span class="bar" aria-hidden="true"></span>Glossaire</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Le sujet -->
+    <section id="sujet" class="wrap pt-16 pb-20 sm:pt-24 sm:pb-28">
+
+      <p class="ps-prompt mb-10">PS C:\ergeshov&gt; <span class="cmd">Get-Veille</span>
+        <span class="arg">-Sujet "Accessibilité numérique"</span>
+      </p>
+
+      <h1 class="display text-[clamp(2.2rem,7vw,4.6rem)] max-w-[15ch]">
+        L'accessibilité <em class="text-accent">numérique</em>
+      </h1>
+
+      <p class="lead mt-10">
+        Un site inaccessible exclut des gens. Depuis le 28 juin 2025, il expose aussi son
+        propriétaire à une sanction. J'ai choisi ce sujet parce qu'il se trouve exactement à
+        l'endroit où mon métier rencontre une obligation légale qui vient de changer.
+      </p>
+
+      <h2 class="h3 mt-16">Pourquoi ce sujet plutôt qu'un autre</h2>
+      <div class="prose">
+        <p>
+          Pendant mon stage, j'ai construit le site d'un artisan plombier. En me renseignant sur ce
+          que la loi lui imposait, j'ai découvert que la réponse était <strong>rien</strong> : une
+          micro-entreprise de moins de dix salariés est exemptée des obligations d'accessibilité
+          des services prévues par la directive européenne.
+        </p>
+        <p>
+          C'est ce qui m'a intéressé. Savoir <strong>où s'arrête une obligation</strong> est plus
+          utile que d'en réciter le principe, et la question se repose à chaque nouveau client :
+          quelle est sa taille, s'agit-il d'un produit ou d'un service, est-il concerné ou non.
+        </p>
+        <p>
+          Ce sujet a aussi un avantage rare pour une veille : il se vérifie. Les critères
+          d'accessibilité se mesurent. Plutôt que de me contenter de lire, j'ai audité ce portfolio
+          et corrigé ce qui n'allait pas. Les résultats chiffrés sont
+          <a href="#audit">plus bas sur cette page</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Dispositif -->
+    <section id="dispositif" class="border-t border-line py-16 sm:py-24 band">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">01</span> Méthode</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-10 max-w-[20ch]">
+          Comment j'organise ma veille
+        </h2>
+
+        <div class="prose">
+          <p>
+            Une veille n'est pas une collection de liens : c'est un dispositif qui tourne
+            régulièrement et dont il reste une trace. Le mien repose sur trois temps : collecter,
+            trier, puis appliquer.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10 mt-12">
+          <div>
+            <h3 class="h3">Collecter</h3>
+            <div class="prose">
+              <p>
+                Agrégateur de flux RSS abonné aux sources officielles et aux blogs spécialisés
+                listés plus bas, complété par les lettres d'information des acteurs du domaine.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 class="h3">Trier</h3>
+            <div class="prose">
+              <p>
+                Une seule question à chaque lecture : est-ce que cela change quelque chose à ma
+                façon de coder ? Si oui, j'en fais une brève datée. Sinon, je passe.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 class="h3">Appliquer</h3>
+            <div class="prose">
+              <p>
+                Ce que je retiens est mis en pratique sur mes propres projets. C'est la partie qui
+                distingue une veille d'une revue de presse.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sources -->
+    <section id="sources" class="border-t border-line py-16 sm:py-24">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">02</span> Sources</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-10 max-w-[22ch]">
+          Où je m'informe, et pourquoi
+        </h2>
+
+        <div class="table-scroll" data-collapse="26">
+          <table class="data-table">
+            <caption class="sr-only">Sources suivies pour la veille sur l'accessibilité numérique</caption>
+            <thead>
+              <tr>
+                <th scope="col">Source</th>
+                <th scope="col">Nature</th>
+                <th scope="col">Pourquoi celle-ci</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="https://accessibilite.numerique.gouv.fr/" target="_blank" rel="noopener">
+                    accessibilite.numerique.gouv.fr
+                  </a>
+                </td>
+                <td>Référentiel officiel · DINUM</td>
+                <td>Le RGAA lui-même, avec ses critères et sa méthode de test. C'est la référence
+                  française, celle qui fait foi en cas de contrôle.</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://design.numerique.gouv.fr/" target="_blank" rel="noopener">
+                    design.numerique.gouv.fr
+                  </a>
+                </td>
+                <td>Actualités · DINUM</td>
+                <td>Les annonces d'évolution du référentiel, notamment les travaux en cours sur la
+                  prochaine version.</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">w3.org/WAI</a>
+                </td>
+                <td>Norme internationale · W3C</td>
+                <td>Les WCAG, dont le RGAA est la déclinaison française. Remonter à la norme évite
+                  de dépendre d'une interprétation.</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32019L0882" target="_blank"
+                    rel="noopener">EUR-Lex</a> et
+                  <a href="https://www.legifrance.gouv.fr/" target="_blank" rel="noopener">Légifrance</a>
+                </td>
+                <td>Textes juridiques</td>
+                <td>La directive européenne et sa transposition française, dans leur rédaction
+                  exacte. Les articles de blog déforment souvent les seuils.</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://access42.net/" target="_blank" rel="noopener">Access42</a>
+                </td>
+                <td>Blog spécialisé · français</td>
+                <td>Analyses de praticiens, en français, sur les évolutions réglementaires et les
+                  difficultés techniques concrètes.</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://www.alsacreations.com/" target="_blank" rel="noopener">Alsacréations</a>
+                </td>
+                <td>Blog technique · français</td>
+                <td>Articles d'intégration accessible, très proches de ce que j'écris au quotidien
+                  en HTML et CSS.</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://webaim.org/" target="_blank" rel="noopener">WebAIM</a>
+                </td>
+                <td>Ressources et outils</td>
+                <td>Outils de mesure, dont le vérificateur de contraste que j'ai utilisé pour
+                  l'audit plus bas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brèves -->
+    <section id="breves" class="border-t border-line py-16 sm:py-24 band">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">03</span> Suivi</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-4 max-w-[20ch]">
+          Ce que j'ai retenu
+        </h2>
+        <p class="text-dim text-[.9rem] mb-12 measure font-light leading-relaxed">
+          Classé de la plus récente à la plus ancienne. Chaque entrée répond à la même question :
+          qu'est-ce que cela change pour quelqu'un qui écrit du code ?
+        </p>
+
+        <div class="max-w-4xl" data-collapse="28">
+
+          <article class="brief">
+            <p class="brief-date">Fin 2026<br />annoncé</p>
+            <div>
+              <h3 class="brief-title">Le RGAA 5 est en cours de rédaction</h3>
+              <p class="brief-body">
+                La DINUM prépare la version 5 du référentiel, attendue pour fin 2026. Elle doit
+                intégrer les <strong>WCAG 2.2</strong>, étendre la méthode technique aux
+                applications mobiles et aux documents bureautiques, et simplifier la formulation des
+                critères.
+              </p>
+              <p class="brief-body mt-3">
+                Ce que ça change pour moi : la version en vigueur reste le RGAA 4.1.2, donc les
+                audits se font toujours sur cette base. Mais commencer dès maintenant à regarder les
+                nouveaux critères des WCAG 2.2, comme la taille minimale des cibles tactiles, évite
+                d'avoir à tout reprendre plus tard.
+              </p>
+              <p class="brief-source">
+                Source : DINUM, design.numerique.gouv.fr et numerique.gouv.fr
+              </p>
+            </div>
+          </article>
+
+          <article class="brief">
+            <p class="brief-date">Juin 2026</p>
+            <div>
+              <h3 class="brief-title">Première condamnation en France</h3>
+              <p class="brief-body">
+                Une juridiction française a ordonné à <strong>Carrefour France</strong> de rendre
+                son site marchand et son application mobile accessibles dans un délai de six mois,
+                sous astreinte par jour de retard.
+              </p>
+              <p class="brief-body mt-3">
+                Ce que ça change pour moi : le texte n'est plus théorique. Une obligation qui donne
+                lieu à des décisions de justice devient un sujet que les entreprises traitent, donc
+                une compétence qu'elles recherchent.
+              </p>
+              <p class="brief-source">
+                Source : presse spécialisée en accessibilité numérique.
+              </p>
+            </div>
+          </article>
+
+          <article class="brief">
+            <p class="brief-date">Novembre 2025</p>
+            <div>
+              <h3 class="brief-title">La DGCCRF met en demeure quatre enseignes</h3>
+              <p class="brief-body">
+                Auchan, Carrefour, E.Leclerc et Picard ont reçu des mises en demeure au titre de
+                l'accessibilité de leurs services numériques. En France, le contrôle est réparti
+                entre l'<strong>ARCOM</strong> et la <strong>DGCCRF</strong>, cette dernière
+                publiant ses actions, ce qui ajoute un risque de réputation à l'amende.
+              </p>
+              <p class="brief-source">
+                Source : communications DGCCRF, à recouper sur economie.gouv.fr
+              </p>
+            </div>
+          </article>
+
+          <article class="brief">
+            <p class="brief-date">28 juin 2025</p>
+            <div>
+              <h3 class="brief-title">L'European Accessibility Act devient applicable</h3>
+              <p class="brief-body">
+                La directive <strong>(UE) 2019/882</strong> du 17 avril 2019 s'applique depuis le
+                28 juin 2025 aux produits et services mis sur le marché à partir de cette date. Les
+                services déjà en place bénéficient d'une période transitoire jusqu'au
+                <strong>28 juin 2030</strong> s'ils ne sont pas substantiellement modifiés.
+              </p>
+              <p class="brief-body mt-3">
+                Deux points à retenir. D'abord, l'exemption : les <strong>micro-entreprises</strong>
+                de moins de dix salariés dont le chiffre d'affaires ou le bilan annuel ne dépasse
+                pas deux millions d'euros échappent aux obligations portant sur les services, mais
+                pas sur les produits. Ensuite, elle disparaît dès que l'entreprise franchit ces
+                seuils, sans délai d'adaptation.
+              </p>
+              <p class="brief-body mt-3">
+                Ce que ça change pour moi : c'est la question à poser à tout nouveau client. Mon
+                artisan plombier était exempté ; une entreprise de vingt salariés qui vend en ligne
+                ne l'est pas.
+              </p>
+              <p class="brief-source">
+                Source : directive (UE) 2019/882, EUR-Lex · handicap.gouv.fr
+              </p>
+            </div>
+          </article>
+
+          <article class="brief">
+            <p class="brief-date">2023</p>
+            <div>
+              <h3 class="brief-title">La transposition française</h3>
+              <p class="brief-body">
+                La directive a été transposée en droit français par la <strong>loi n° 2023-171 du
+                  9 mars 2023</strong>, dite loi DDADUE, complétée par l'<strong>ordonnance
+                  n° 2023-859 du 6 septembre 2023</strong> et leurs décrets d'application.
+              </p>
+              <p class="brief-body mt-3">
+                Ces textes s'ajoutent à un cadre français préexistant, issu de l'article 47 de la
+                loi du 11 février 2005, qui visait d'abord les services publics.
+              </p>
+              <p class="brief-source">
+                Source : Légifrance.
+              </p>
+            </div>
+          </article>
+
+          <article class="brief">
+            <p class="brief-date">Version<br />en vigueur</p>
+            <div>
+              <h3 class="brief-title">RGAA 4.1.2, aligné sur les WCAG 2.1 niveau AA</h3>
+              <p class="brief-body">
+                Publié en septembre 2021 et mis à jour en avril 2023, le <strong>RGAA 4.1.2</strong>
+                reste la version sur laquelle se font les audits de conformité. Il traduit les
+                recommandations internationales WCAG du W3C en critères vérifiables un par un.
+              </p>
+              <p class="brief-body mt-3">
+                Ce que ça change pour moi : le niveau visé est <strong>AA</strong>, ce qui fixe le
+                rapport de contraste minimal à 4,5:1 pour un texte de taille normale. C'est ce seuil
+                que j'ai appliqué à l'audit ci-dessous.
+              </p>
+              <p class="brief-source">
+                Source : accessibilite.numerique.gouv.fr
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Audit -->
+    <section id="audit" class="border-t border-line py-16 sm:py-24">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">04</span> Mise en pratique</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-8 max-w-[22ch]">
+          J'ai audité mon propre portfolio
+        </h2>
+
+        <div class="prose">
+          <p>
+            La version précédente de ce site avait été faite avec soin, et elle échouait quand même
+            sur plusieurs critères. C'est justement l'intérêt de la mesure : elle contredit
+            l'impression visuelle. Un texte qui <em>semble</em> lisible peut être sous le seuil.
+          </p>
+          <p>
+            J'ai calculé les rapports de contraste selon la formule de luminance relative des WCAG,
+            validé le code auprès du W3C, et parcouru le site uniquement au clavier. Voici ce que
+            j'ai trouvé, et ce que j'ai corrigé.
+          </p>
+        </div>
+
+        <h3 class="h3 mt-14">Contrastes</h3>
+        <div class="table-scroll" data-collapse="26">
+          <table class="data-table">
+            <caption class="sr-only">Rapports de contraste avant et après correction</caption>
+            <thead>
+              <tr>
+                <th scope="col">Élément</th>
+                <th scope="col">Avant</th>
+                <th scope="col">Après</th>
+                <th scope="col">Correction apportée</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Accent corail sur le fond</td>
+                <td class="font-mono text-[.75rem] ko">4,29:1 · échec AA</td>
+                <td class="font-mono text-[.75rem] ok">4,78:1 · conforme</td>
+                <td>Fond assombri de <code>#1e1e2f</code> à <code>#14141f</code>. La couleur d'accent
+                  n'a pas bougé.</td>
+              </tr>
+              <tr>
+                <td>Texte secondaire</td>
+                <td class="font-mono text-[.75rem] ko">3,77:1 · échec AA</td>
+                <td class="font-mono text-[.75rem] ok">5,13:1 · conforme</td>
+                <td>Gris éclairci, ce texte étant de petite taille, donc soumis au seuil de 4,5:1.
+                </td>
+              </tr>
+              <tr>
+                <td>Texte courant</td>
+                <td class="font-mono text-[.75rem] ok">5,31:1 · conforme</td>
+                <td class="font-mono text-[.75rem] ok">7,18:1 · conforme</td>
+                <td>Déjà conforme, amélioré au passage.</td>
+              </tr>
+              <tr>
+                <td>Mots surlignés</td>
+                <td class="font-mono text-[.75rem]">sans objet</td>
+                <td class="font-mono text-[.75rem] ok">11,97:1 · conforme</td>
+                <td>Contraste vérifié sur la couleur résultant du mélange, et non sur le fond de la
+                  page.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h3 mt-14">Structure et navigation</h3>
+        <div class="table-scroll" data-collapse="26">
+          <table class="data-table">
+            <caption class="sr-only">Autres points d'accessibilité corrigés</caption>
+            <thead>
+              <tr>
+                <th scope="col">Point vérifié</th>
+                <th scope="col">Avant</th>
+                <th scope="col">Après</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Validité du code</td>
+                <td class="ko">Une balise <code>&lt;div&gt;</code> jamais fermée, qui laissait la
+                  moitié d'une section vide sur grand écran</td>
+                <td class="ok">Zéro erreur de structure</td>
+              </tr>
+              <tr>
+                <td>Alternative textuelle du logo</td>
+                <td class="ko"><code>alt</code> vide sur le seul élément d'identité du site</td>
+                <td class="ok">Identité portée par du texte, lisible par tous</td>
+              </tr>
+              <tr>
+                <td>Navigation au clavier</td>
+                <td class="ko">Aucun lien d'évitement, focus peu visible</td>
+                <td class="ok">Lien d'évitement en début de page, contour de focus net partout</td>
+              </tr>
+              <tr>
+                <td>Fenêtres modales</td>
+                <td class="ko">Boîte maison, sans piège à focus</td>
+                <td class="ok">Élément <code>&lt;dialog&gt;</code> natif : focus enfermé, fermeture
+                  par Échap, retour du focus au bouton d'origine</td>
+              </tr>
+              <tr>
+                <td>Animations</td>
+                <td class="ko">Animations jouées quel que soit le réglage du système</td>
+                <td class="ok"><code>prefers-reduced-motion</code> respecté</td>
+              </tr>
+              <tr>
+                <td>Liens</td>
+                <td class="ko">Trois liens ouvrant un onglet vide, une adresse électronique cassée
+                </td>
+                <td class="ok">Aucun lien mort</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note mt-12">
+          <strong>Ce que l'audit ne couvre pas.</strong> Je n'ai pas testé le site avec un lecteur
+          d'écran réel, ni fait relire par une personne en situation de handicap. Un audit RGAA
+          complet comporte 106 critères ; je n'en ai vérifié qu'une partie. Je ne revendique donc
+          pas une conformité totale.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Glossaire -->
+    <section id="glossaire" class="border-t border-line py-16 sm:py-24 band">
+      <div class="wrap reveal">
+        <p class="eyebrow"><span class="n">05</span> Glossaire</p>
+        <h2 class="display text-[clamp(1.8rem,4.2vw,2.9rem)] mb-10">Les sigles du domaine</h2>
+
+        <dl class="fiche max-w-4xl" data-collapse="24">
+          <div>
+            <dt>RGAA</dt>
+            <dd>Référentiel général d'amélioration de l'accessibilité. Le référentiel français,
+              maintenu par la DINUM.</dd>
+          </div>
+          <div>
+            <dt>WCAG</dt>
+            <dd>Web Content Accessibility Guidelines. La norme internationale du W3C, dont le RGAA
+              est la déclinaison française.</dd>
+          </div>
+          <div>
+            <dt>Niveau AA</dt>
+            <dd>Niveau de conformité intermédiaire des WCAG, celui retenu par la réglementation.
+              Impose notamment un contraste de 4,5:1 pour un texte de taille normale.</dd>
+          </div>
+          <div>
+            <dt>EAA</dt>
+            <dd>European Accessibility Act, nom usuel de la directive (UE) 2019/882.</dd>
+          </div>
+          <div>
+            <dt>DINUM</dt>
+            <dd>Direction interministérielle du numérique, qui rédige et maintient le RGAA.</dd>
+          </div>
+          <div>
+            <dt>a11y</dt>
+            <dd>Abréviation d'<i lang="en">accessibility</i> : le premier et le dernier caractère,
+              séparés par le nombre de lettres omises.</dd>
+          </div>
+          <div>
+            <dt>Lecteur d'écran</dt>
+            <dd>Logiciel qui restitue vocalement le contenu d'un écran. NVDA et JAWS sous Windows,
+              VoiceOver sur les appareils Apple.</dd>
+          </div>
+        </dl>
+
+        <div class="flex flex-wrap gap-3 mt-14">
+          <a class="btn btn-primary" href="./index.html#projets">Voir mes projets</a>
+          <a class="btn" href="./stage.html">Lire mon rapport de stage</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-line py-10">
+    <div class="wrap flex flex-col sm:flex-row gap-3 justify-between font-mono text-[.7rem] text-dim">
+      <p class="ps-prompt">PS C:\ergeshov&gt; <span class="cmd">exit</span></p>
+      <p>Baimurat Ergeshov · <span id="year"></span></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+# Notes de travail
+stage-sio1.md
+
+# Ancienne maquette, remplacée par index.html
+preview.html
+
+# Documentation client : contient la procédure de mot de passe admin
+DOCUMENTATION.md
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.code-workspace
+
+
+img/originaux/
