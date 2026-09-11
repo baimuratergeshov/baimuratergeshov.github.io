@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.gallery img').forEach(function (el) {
       el.setAttribute('role', 'button');
       el.setAttribute('tabindex', '0');
+      el.draggable = false;
       el.addEventListener('click', function () { open(el); });
       el.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
@@ -244,9 +245,17 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Déplacement une fois zoomé */
     var dragging = false, moved = false, sx = 0, sy = 0, ox = 0, oy = 0;
 
+    /* le navigateur veut lancer son propre glisser d'image : on le
+       coupe, sinon il prend la main sur le deplacement de la vue.
+       Le CSS -webkit-user-drag ne suffit pas, Firefox l'ignore. */
+    img.draggable = false;
+    img.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
     stage.addEventListener('pointerdown', function (e) {
+      e.preventDefault();
+      moved = false;
       if (scale <= 1) return;
-      dragging = true; moved = false;
+      dragging = true;
       sx = e.clientX; sy = e.clientY; ox = tx; oy = ty;
       stage.setPointerCapture(e.pointerId);
       stage.classList.add('is-panning');
