@@ -7,7 +7,7 @@ Trois pages : présentation et projets, récapitulatif de stage, veille technolo
 
 ```
 index.html          Présentation, compétences, projets
-stage.html          Stage chez Adyl-Plombier (mai / juin 2025)
+stage.html          Stage chez Adyl Plombier (mai / juin 2025)
 veille.html         Veille technologique sur l'accessibilité numérique
 assets/
   tw-config.js      Configuration Tailwind (couleurs, polices)
@@ -15,8 +15,9 @@ assets/
   script.js         Script commun aux trois pages
 img/
   *.webp            Captures optimisées, affichées sur le site
-  originaux/        Captures d'origine en PNG, non utilisées par le site
+  originaux/        Captures d'origine, hors dépôt
   favicon.svg
+optimiser-images.py Convertit originaux/ en .webp
 ```
 
 ## Technologies
@@ -26,34 +27,33 @@ Polices : Fraunces (titres), Sora (texte), JetBrains Mono (métadonnées).
 
 Aucune étape de compilation : ouvrir `index.html` dans un navigateur suffit.
 
-## Ajouter une capture à un projet
+## Ajouter une capture
 
-Les captures d'un projet vivent dans la `<dialog>` correspondante, en bas
-d'`index.html`. Dans le bloc `<div class="gallery">`, copier une ligne :
+1. Dépose l'original (PNG ou JPG) dans `img/originaux/`.
+2. Lance la conversion depuis la racine du projet :
 
-```html
-<img src="./img/mon_image.webp" alt="Description précise de ce que montre l'image"
-     onerror="imgFail(this)" />
-```
+   ```bash
+   python3 optimiser-images.py
+   ```
 
-Le `alt` doit décrire l'image, pas la nommer : il sert aux lecteurs d'écran et
-s'affiche aussi en légende dans la visionneuse. Une image absente du dossier
-disparaît d'elle-même, sans icône cassée.
+   Chaque image est réduite à 1400 px de large et enregistrée en `.webp`
+   dans `img/`. Les originaux ne sont pas modifiés, et ce qui est déjà
+   converti est ignoré. `--force` refait tout.
 
-## Optimiser une image
+3. Référence le `.webp` dans la galerie du projet concerné, en bas
+   d'`index.html` :
 
-Les captures sont converties en WebP, largeur maximale 1400 px, qualité 82.
-Les originaux restent dans `img/originaux/`.
+   ```html
+   <img src="./img/ma_capture.webp" alt="Ce que montre l'image"
+        onerror="imgFail(this)" />
+   ```
 
-```bash
-python3 -c "
-from PIL import Image
-im = Image.open('img/originaux/ma_capture.png').convert('RGB')
-w, h = im.size
-if w > 1400: im = im.resize((1400, round(h*1400/w)), Image.LANCZOS)
-im.save('img/ma_capture.webp', 'WEBP', quality=82, method=6)
-"
-```
+Le `alt` doit décrire l'image, pas la nommer : il sert aux lecteurs
+d'écran et s'affiche aussi en légende dans la visionneuse. Une image
+absente du dossier disparaît d'elle-même, sans icône cassée.
+
+`img/originaux/` est exclu du dépôt : les originaux restent sur ton
+disque, seuls les `.webp` sont publiés.
 
 ## Accessibilité
 
