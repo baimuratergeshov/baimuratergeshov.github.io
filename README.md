@@ -9,6 +9,7 @@ Trois pages : présentation et projets, récapitulatif de stage, veille technolo
 index.html          Présentation, compétences, projets
 stage.html          Stage chez Adyl Plombier (mai / juin 2025)
 veille.html         Veille technologique sur l'accessibilité numérique
+CV-Baimurat-Ergeshov.pdf
 assets/
   tw-config.js      Configuration Tailwind (couleurs, polices)
   style.css         Feuille de style commune
