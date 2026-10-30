@@ -18,14 +18,16 @@
 }
 
 :root {
-  --bg: #111214;
-  --bg-alt: #191b1f;
-  --line: #2a2d33;
-  --edge: #6b7078;
-  --ink: #e8e9ec;
-  --mut: #a8acb5;
-  --accent: #f0b429;
-  --ok: #7fd49b;
+  /* Palette d'origine du portfolio. --edge sert aux bordures de boutons et
+     de champs (3:1 minimum), --line aux simples filets décoratifs. */
+  --bg: #14141f;
+  --bg-alt: #161623;
+  --line: #2c2c42;
+  --edge: #7a7a99;
+  --ink: #f2f2f7;
+  --mut: #a0a0bd;
+  --accent: #e05252;
+  --ok: #7ec99a;
   --ko: #ff8a80;
 
   --font: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -427,8 +429,8 @@ kbd {
   }
 
   .btn-primary:hover {
-    background: #f6c453;
-    border-color: #f6c453;
+    background: #e86a6a;
+    border-color: #e86a6a;
     color: var(--bg);
   }
 }
@@ -455,7 +457,7 @@ dialog.modal {
 }
 
 dialog.modal::backdrop {
-  background: rgba(6, 7, 8, .8);
+  background: rgba(8, 8, 14, .8);
   transition: opacity 180ms var(--ease-out);
 }
 
@@ -576,7 +578,7 @@ dialog.lightbox {
 }
 
 dialog.lightbox::backdrop {
-  background: rgba(6, 7, 8, .95);
+  background: rgba(8, 8, 14, .95);
 }
 
 @starting-style {
@@ -677,7 +679,7 @@ dialog.lightbox::backdrop {
   gap: .75rem 1.5rem;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to top, rgba(6, 7, 8, .95), transparent);
+  background: linear-gradient(to top, rgba(8, 8, 14, .95), transparent);
 }
 
 .lb-caption {
