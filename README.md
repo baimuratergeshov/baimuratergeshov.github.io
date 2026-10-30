@@ -28,34 +28,6 @@ Polices : Fraunces (titres), Sora (texte), JetBrains Mono (métadonnées).
 
 Aucune étape de compilation : ouvrir `index.html` dans un navigateur suffit.
 
-## Ajouter une capture
-
-1. Dépose l'original (PNG ou JPG) dans `img/originaux/`.
-2. Lance la conversion depuis la racine du projet :
-
-   ```bash
-   python3 optimiser-images.py
-   ```
-
-   Chaque image est réduite à 1400 px de large et enregistrée en `.webp`
-   dans `img/`. Les originaux ne sont pas modifiés, et ce qui est déjà
-   converti est ignoré. `--force` refait tout.
-
-3. Référence le `.webp` dans la galerie du projet concerné, en bas
-   d'`index.html` :
-
-   ```html
-   <img src="./img/ma_capture.webp" alt="Ce que montre l'image"
-        onerror="imgFail(this)" />
-   ```
-
-Le `alt` doit décrire l'image, pas la nommer : il sert aux lecteurs
-d'écran et s'affiche aussi en légende dans la visionneuse. Une image
-absente du dossier disparaît d'elle-même, sans icône cassée.
-
-`img/originaux/` est exclu du dépôt : les originaux restent sur ton
-disque, seuls les `.webp` sont publiés.
-
 ## Accessibilité
 
 L'accessibilité étant le sujet de la veille, le site sert lui-même de terrain
