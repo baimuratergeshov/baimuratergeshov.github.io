@@ -1,67 +1,47 @@
 # Portfolio de Baimurat Ergeshov
 
-Portfolio personnel, réalisé dans le cadre du BTS SIO option SLAM.
-Trois pages : présentation et projets, récapitulatif de stage, veille technologique.
+Mon portfolio de BTS SIO option SLAM, en ligne sur
+[baimuratergeshov.github.io](https://baimuratergeshov.github.io).
+Je cherche un stage de 8 semaines, du lundi 4 janvier au vendredi 26 février 2027.
 
-## Structure
+## Les pages
 
-```
-index.html          Présentation, compétences, projets
-stage.html          Stage chez Adyl Plombier (mai / juin 2026)
-veille.html         Veille technologique sur l'accessibilité numérique
-CV_Baimurat_Ergeshov.pdf
-assets/
-  tw-config.js      Configuration Tailwind (couleurs, polices)
-  style.css         Feuille de style commune
-  script.js         Script commun aux trois pages
-img/
-  *.webp            Captures optimisées, affichées sur le site
-  originaux/        Captures d'origine, hors dépôt
-  favicon.svg
-optimiser-images.py Convertit originaux/ en .webp
-```
+| Page | Contenu |
+| --- | --- |
+| `index.html` | Présentation, parcours, compétences (avec les projets qui les prouvent), liste des projets avec une fiche détaillée pour chacun, contact |
+| `stage.html` | Rapport du stage de première année chez Adyl Plombier (18 mai au 26 juin 2026) : besoin, démarche, architecture MVC, back-office, sécurité, difficultés, compétences du référentiel, bilan |
+| `veille.html` | Veille technologique sur l'accessibilité numérique : méthode, sources, brèves datées, audit de ce portfolio, glossaire |
+
+Le CV est dans `CV_Baimurat_Ergeshov.pdf`.
+
+## Les projets présentés
+
+- **Adyl Plombier** : site et espace d'administration d'un plombier d'urgence, en PHP MVC sans framework (stage)
+- **Hôtel Chambord** : gestion des salariés (CRUD) et site multi-pages d'un hôtel fictif
+- **MovieDB** : catalogue de films alimenté par l'API TMDb
+- **Gestion des stagiaires** : application PHP MVC avec tableau de bord
+- **Passerelle Python / PHP** : échange de données en JSON entre un script Python et une application PHP
+- **Serveur maison sous Ubuntu** : Jellyfin sous Docker, accès distant par Tailscale
+- **Ce portfolio**
 
 ## Technologies
 
-HTML, Tailwind CSS (via CDN), CSS et JavaScript sans bibliothèque.
-Polices : Fraunces (titres), Sora (texte), JetBrains Mono (métadonnées).
+HTML, CSS et JavaScript, sans framework ni bibliothèque. Police Geist, hébergée
+dans `assets/fonts/`. Pas d'étape de compilation : ouvrir `index.html` suffit.
 
-Aucune étape de compilation : ouvrir `index.html` dans un navigateur suffit.
+## Organisation du dépôt
 
-## Ajouter une capture
-
-1. Dépose l'original (PNG ou JPG) dans `img/originaux/`.
-2. Lance la conversion depuis la racine du projet :
-
-   ```bash
-   python3 optimiser-images.py
-   ```
-
-   Chaque image est réduite à 1400 px de large et enregistrée en `.webp`
-   dans `img/`. Les originaux ne sont pas modifiés, et ce qui est déjà
-   converti est ignoré. `--force` refait tout.
-
-3. Référence le `.webp` dans la galerie du projet concerné, en bas
-   d'`index.html` :
-
-   ```html
-   <img src="./img/ma_capture.webp" alt="Ce que montre l'image"
-        onerror="imgFail(this)" />
-   ```
-
-Le `alt` doit décrire l'image, pas la nommer : il sert aux lecteurs
-d'écran et s'affiche aussi en légende dans la visionneuse. Une image
-absente du dossier disparaît d'elle-même, sans icône cassée.
-
-`img/originaux/` est exclu du dépôt : les originaux restent sur ton
-disque, seuls les `.webp` sont publiés.
+```
+index.html, stage.html, veille.html
+CV_Baimurat_Ergeshov.pdf
+assets/        style.css, script.js, fonts/
+img/           captures au format .webp, favicon
+optimiser-images.py   convertit les captures en .webp (usage dans le fichier)
+```
 
 ## Accessibilité
 
-L'accessibilité étant le sujet de la veille, le site sert lui-même de terrain
-d'application. Contrastes mesurés au seuil WCAG AA de 4,5:1, navigation
-complète au clavier, lien d'évitement, `prefers-reduced-motion` respecté,
-fenêtres modales reposant sur l'élément `<dialog>` natif.
-
-Le détail de l'audit, avec les valeurs avant et après correction, figure
-dans `veille.html`.
+Le site sert de terrain d'application à ma veille sur l'accessibilité :
+contrastes de texte à 4,5:1 minimum, navigation au clavier, lien d'évitement,
+focus visible, fenêtres basées sur `<dialog>`, `prefers-reduced-motion` respecté.
+Les mesures détaillées sont dans `veille.html`.
