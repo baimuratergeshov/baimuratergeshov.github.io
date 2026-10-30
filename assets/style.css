@@ -146,6 +146,10 @@ kbd {
   background: var(--bg-alt);
 }
 
+.section-intro {
+  margin-bottom: 1.75rem;
+}
+
 .stack > * + * {
   margin-top: 1.1rem;
 }
@@ -339,14 +343,8 @@ kbd {
   background: var(--bg-alt);
 }
 
-.project-thumb--empty {
-  display: none;
-}
-
-@media (min-width: 760px) {
-  .project-thumb--empty {
-    display: block;
-  }
+.project:not(:has(.project-thumb)) {
+  grid-template-columns: 1fr;
 }
 
 .project h3 {
@@ -520,6 +518,15 @@ dialog.modal::backdrop {
 
 .modal-text > * + * {
   margin-top: 1rem;
+}
+
+.modal-text > h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+}
+
+.modal-inner > h2 + .meta {
+  margin-top: .5rem;
 }
 
 .gallery {
