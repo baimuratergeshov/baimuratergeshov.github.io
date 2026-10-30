@@ -16,49 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  /* apparition au défilement */
-  var revealables = document.querySelectorAll('.reveal');
-  if (revealables.length) {
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      revealables.forEach(function (el) { io.observe(el); });
-    } else {
-      revealables.forEach(function (el) { el.classList.add('visible'); });
-    }
-  }
-
-  /* sommaire latéral : surligne la section en cours */
-  var railLinks = document.querySelectorAll('.rail a');
-  var sections = document.querySelectorAll('main section[id]');
-  if (railLinks.length && sections.length && 'IntersectionObserver' in window) {
-    var visible = {};
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
-
-      var current = null;
-      sections.forEach(function (s) { if (!current && visible[s.id]) current = s.id; });
-      if (!current) return;
-
-      /* certaines sections n'ont pas d'entrée dans le sommaire */
-      var match = null;
-      railLinks.forEach(function (l) {
-        if (l.getAttribute('href') === '#' + current) match = l;
-      });
-      if (!match) return;
-
-      railLinks.forEach(function (l) { l.classList.toggle('is-active', l === match); });
-    }, { rootMargin: '-45% 0px -45% 0px' });
-
-    sections.forEach(function (s) { spy.observe(s); });
-  }
-
   /* repli des sections longues, sur mobile */
   (function () {
     var boxes = document.querySelectorAll('[data-collapse]');
