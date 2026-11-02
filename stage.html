@@ -134,8 +134,7 @@
             <h3>2. Conception</h3>
             <p>
               Charte graphique (bleu profond, bleu clair, orange réservé aux appels à l'action),
-              puis maquettes des écrans avant de coder. Corriger une maquette prend quelques
-              minutes, corriger une page intégrée prend une demi-journée.
+              puis maquettes des écrans avant de coder.
             </p>
           </li>
           <li>
@@ -186,11 +185,9 @@
 
         <div class="prose">
           <p>
-            J'aurais pu installer un CMS ou partir de Symfony. J'ai écrit l'architecture moi-même,
-            pour deux raisons. C'était un stage de formation, et j'apprends plus en construisant le
-            mécanisme qu'en configurant celui d'un autre. Et le site n'embarque que le code dont il
-            a besoin, sans extensions ni mises à jour de sécurité à suivre sur des composants
-            inutilisés.
+            J'aurais pu utiliser un CMS ou Symfony. J'ai écrit l'architecture moi-même parce que
+            c'était un stage de formation et que je voulais comprendre comment ça marche. Le site
+            ne contient que le code dont il a besoin.
           </p>
           <p>
             Le principe est celui du <strong>point d'entrée unique</strong>. Toutes les requêtes
@@ -244,17 +241,13 @@
         <div class="prose gap-top">
           <h3>Deux modes de stockage</h3>
           <p>
-            Je n'ai pas stocké toutes les données de la même façon.
-          </p>
-          <p>
             <strong>MySQL</strong> pour ce qui grossit et se recherche : articles de blog, messages
             reçus, compte d'administration. Les accès passent uniquement par PDO en requêtes
             préparées, et uniquement depuis les modèles.
           </p>
           <p>
             <strong>Des fichiers JSON</strong> pour les avis clients et les métadonnées de la
-            galerie. Ce sont de petits volumes, lus à chaque page et rarement modifiés : une table
-            et une requête auraient coûté plus qu'elles n'auraient rapporté.
+            galerie. Ce sont de petits volumes, lus à chaque page et rarement modifiés.
           </p>
           <p>
             Si le volume d'avis augmentait nettement, il faudrait revoir ce choix.
@@ -391,9 +384,7 @@
             La configuration de PHP limite le nombre de fichiers par requête et le poids total, et
             elle écarte le surplus sans erreur. J'ai ajusté ces limites côté serveur. J'ai aussi
             fait comparer par l'application le nombre de fichiers sélectionnés au nombre reçu, pour
-            afficher un avertissement au lieu de laisser croire que tout s'est bien passé. Depuis,
-            quand un comportement est silencieux, je vérifie d'abord ce qui entre dans le
-            programme avant de relire mon code.
+            afficher un avertissement au lieu de laisser croire que tout s'est bien passé.
           </p>
 
           <h3>Un fichier JSON que l'artisan ne pouvait pas modifier</h3>
@@ -401,19 +392,14 @@
             J'avais mis les avis clients dans un fichier JSON modifiable à la main, ce qui était
             simple pour moi. Pour l'artisan, une virgule mal placée cassait la page d'accueil sans
             qu'il comprenne pourquoi. J'ai fait un formulaire d'administration qui écrit le fichier
-            à sa place, avec validation du format de date et limite du nombre de photos. Le
-            stockage n'a pas changé, seulement l'interface. J'avais pensé à ma facilité de
-            développement, pas à l'usage réel.
+            à sa place, avec validation du format de date et limite du nombre de photos. Les avis
+            sont toujours dans le même fichier JSON.
           </p>
 
           <h3>Passer d'une demande orale à des spécifications</h3>
           <p>
-            L'artisan ne me parlait pas de fonctionnalités. Il parlait de son métier, de ses
-            clients, de ce qui le distingue de ses concurrents. Transformer ça en liste de pages et
-            d'écrans a pris plus de temps que prévu, et je suis retourné le voir plusieurs fois.
-            Ça a mieux marché quand j'ai arrêté de demander « que voulez-vous sur le site ? » et
-            que j'ai demandé « que fait quelqu'un qui vous appelle à deux heures du matin ? ». Il
-            savait répondre à cette question.
+            L'artisan parlait de son métier plus que de fonctionnalités. Transformer ça en liste
+            de pages a pris plusieurs rendez-vous.
           </p>
         </div>
       </div>
@@ -499,15 +485,14 @@
 
         <div class="prose">
           <p>
-            Avant ce stage, je faisais des applications pour des sujets d'exercice. Ici, quelqu'un
-            attendait le résultat, s'en sert tous les jours et me signale ce qui ne va pas.
+            Avant ce stage, je ne faisais que des exercices. Cette fois, l'artisan utilise le site
+            et me signale les bugs.
           </p>
           <p>
             Techniquement, construire l'architecture m'a permis de comprendre ce qu'un framework
-            automatise. J'ai aussi travaillé la sécurité, parce que l'espace d'administration est
-            en ligne. La maintenance m'a
-            montré que l'artisan voyait des détails que je ne voyais pas, parce que je connaissais
-            le site par cœur et lui le découvrait.
+            fait à ma place. J'ai aussi travaillé la sécurité, parce que l'espace d'administration
+            est en ligne. Pendant la maintenance, l'artisan a remarqué des défauts que je n'avais
+            pas vus.
           </p>
 
           <h3>Ce que je ferais autrement</h3>
@@ -518,12 +503,12 @@
               problème du fichier JSON des avis avant que j'aie à le reprendre.
             </li>
             <li>
-              <strong>Limiter les tentatives de connexion dès le départ.</strong> C'est la première
-              chose qu'un attaquant essaie, et je l'avais repoussée à plus tard.
+              <strong>Limiter les tentatives de connexion dès le départ.</strong> Je l'avais
+              repoussée à plus tard.
             </li>
             <li>
-              <strong>Écrire la documentation au fil de l'eau.</strong> La rédiger à la fin m'a
-              coûté plus cher que de la tenir à jour chaque semaine.
+              <strong>Écrire la documentation au fil de l'eau.</strong> Je l'ai rédigée à la fin
+              et j'avais oublié des détails.
             </li>
           </ul>
         </div>
