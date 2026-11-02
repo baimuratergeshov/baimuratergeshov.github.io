@@ -19,8 +19,8 @@ Le CV est dans `CV_Baimurat_Ergeshov.pdf`.
 - **Adyl Plombier** : site et espace d'administration d'un plombier d'urgence, en PHP MVC sans framework (stage)
 - **Hôtel Chambord** : gestion des salariés (CRUD) et site multi-pages d'un hôtel fictif
 - **MovieDB** : catalogue de films alimenté par l'API TMDb
-- **Gestion des stagiaires** : application PHP MVC avec tableau de bord
-- **Passerelle Python / PHP** : échange de données en JSON entre un script Python et une application PHP
+- **Gestion des stagiaires** : application PHP MVC de cours, j'y ai ajouté le tableau de bord
+- **Passerelle Python / PHP** : une application PHP écrit en JSON et en MySQL, un script Python relit le JSON
 - **Serveur maison sous Ubuntu** : Jellyfin sous Docker, accès distant par Tailscale
 - **Ce portfolio**
 

@@ -128,14 +128,14 @@
           <div>
             <dt>MySQL et SQL</dt>
             <dd>
-              Adyl Plombier, Hôtel Chambord
+              Adyl Plombier, Hôtel Chambord, Gestion des stagiaires, Passerelle Python / PHP
               <span class="meta">Conception du schéma, puis CRUD complet sur les données.</span>
             </dd>
           </div>
           <div>
             <dt>JavaScript</dt>
             <dd>
-              Hôtel Chambord, MovieDB, ce portfolio
+              Adyl Plombier, Hôtel Chambord, ce portfolio
               <span class="meta">Interactions d'interface et validation de formulaires côté client.</span>
             </dd>
           </div>
@@ -183,7 +183,7 @@
             <dt>Python</dt>
             <dd>
               Passerelle Python / PHP
-              <span class="meta">Script qui échange des données en JSON avec une application PHP.</span>
+              <span class="meta">Script qui relit le fichier JSON écrit par une application PHP.</span>
             </dd>
           </div>
           <div>
@@ -216,7 +216,7 @@
                 Site public et espace d'administration pour un plombier d'urgence, en MVC sans
                 framework. Fait pendant mon stage de 1<sup>re</sup> année.
               </p>
-              <p class="meta">PHP 8, MVC, MySQL, Tailwind · 2026 · Stage</p>
+              <p class="meta">PHP 8, MVC, MySQL, Tailwind, JavaScript · 2026 · Stage</p>
             </div>
           </li>
 
@@ -254,10 +254,10 @@
               <h3><button type="button" class="project-open" data-dialog="dlg-stagiaires"
                   aria-haspopup="dialog"><span>Gestion des stagiaires</span></button></h3>
               <p>
-                Suivi de stagiaires, de matières et d'évaluations, avec un tableau de bord
-                d'administration.
+                Suivi de stagiaires, de matières et d'évaluations. À partir du code fourni par le
+                professeur, j'ai ajouté le tableau de bord d'administration.
               </p>
-              <p class="meta">PHP, MVC, MySQL, Bootstrap · 2025-2026 · Projet individuel</p>
+              <p class="meta">PHP, MVC, MySQL, Bootstrap · 2025-2026 · Projet de cours</p>
             </div>
           </li>
 
@@ -267,8 +267,8 @@
               <h3><button type="button" class="project-open" data-dialog="dlg-passerelle"
                   aria-haspopup="dialog"><span>Passerelle Python / PHP</span></button></h3>
               <p>
-                Un script Python et une application PHP échangent des données en JSON, autour
-                d'une même base de données.
+                Une application PHP enregistre des utilisateurs en JSON et en MySQL, et un script
+                Python relit le fichier JSON.
               </p>
               <p class="meta">Python, PHP, JSON, MySQL · 2025-2026 · Projet individuel</p>
             </div>
@@ -348,7 +348,7 @@
     <div class="modal-inner">
       <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
       <h2 id="t-adyl">Adyl Plombier</h2>
-      <p class="meta">PHP 8, MVC, MySQL, Tailwind · 2026 · Stage</p>
+      <p class="meta">PHP 8, MVC, MySQL, Tailwind, JavaScript · 2026 · Stage</p>
 
       <div class="gallery">
         <img src="./img/adyl_plombier_img1.webp" alt="Page d'accueil du site Adyl Plombier" onerror="imgFail(this)" />
@@ -371,9 +371,9 @@
         </p>
         <p>
           L'application suit une architecture <strong>MVC</strong> que j'ai écrite moi-même, sans CMS
-          ni framework : point d'entrée unique, routeur, contrôleurs, modèles et vues. Seul le
-          dossier public est accessible depuis le web. Le reste du code et les données sont
-          au-dessus de la racine web.
+          ni framework : point d'entrée unique, routeur, contrôleurs, modèles et vues. Une règle de
+          réécriture envoie toutes les requêtes vers le dossier public, donc le reste du code et
+          les données ne sont pas accessibles par une adresse.
         </p>
         <p>
           L'espace d'administration est ouvert sur internet, donc j'ai traité la
@@ -461,7 +461,7 @@
         </p>
         <p>
           J'y ai appris à consommer une API REST côté serveur : construire la requête, lire la
-          réponse JSON, et gérer les cas où l'API ne renvoie rien ou répond par une erreur.
+          réponse JSON, paginer les résultats et gérer le cas où l'API ne renvoie aucun résultat.
         </p>
       </div>
 
@@ -477,7 +477,7 @@
     <div class="modal-inner">
       <button type="button" class="modal-close" data-close aria-label="Fermer la fiche projet">&#10005;</button>
       <h2 id="t-stagiaires">Gestion des stagiaires</h2>
-      <p class="meta">PHP, MVC, MySQL, Bootstrap · 2025-2026 · Projet individuel</p>
+      <p class="meta">PHP, MVC, MySQL, Bootstrap · 2025-2026 · Projet de cours</p>
 
       <div class="gallery">
         <img src="./img/stagiaires_mvc.webp" alt="Tableau de bord de gestion des stagiaires" onerror="imgFail(this)" />
@@ -486,13 +486,12 @@
       <div class="modal-text">
         <p>
           Application de suivi de stagiaires, de matières et d'évaluations, en
-          <strong>Modèle-Vue-Contrôleur</strong>. Elle a un tableau de bord d'administration et une
-          validation des formulaires côté client.
+          <strong>Modèle-Vue-Contrôleur</strong>. Le code de départ était fourni par le professeur.
+          J'ai ajouté le tableau de bord d'administration.
         </p>
         <p>
-          Je voulais séparer les responsabilités : le contrôleur reçoit la requête et décide, le
-          modèle est le seul à parler à la base de données, la vue affiche. J'ai réutilisé ce
-          découpage pendant mon stage.
+          Le contrôleur reçoit la requête et décide, le modèle est le seul à parler à la base de
+          données, la vue affiche. J'ai réutilisé ce découpage pendant mon stage.
         </p>
       </div>
 
@@ -513,11 +512,9 @@
 
       <div class="modal-text">
         <p>
-          Un script <strong>Python</strong> et une application <strong>PHP</strong> échangent des
-          données au format JSON, autour d'une même base de données.
-        </p>
-        <p>
-          Le projet comprend un formulaire web et l'enregistrement des données en base.
+          Un formulaire <strong>PHP</strong> enregistre chaque utilisateur dans un fichier JSON et
+          dans une base MySQL. Un script <strong>Python</strong> relit ensuite le fichier JSON et
+          affiche son contenu.
         </p>
       </div>
 

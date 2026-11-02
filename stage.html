@@ -209,10 +209,11 @@
         <div class="prose gap-top">
           <h3>Ce qui est exposé</h3>
           <p>
-            Seul le dossier <code>public/</code> est accessible depuis le web. Le code applicatif,
-            la configuration, les identifiants de base de données et les fichiers de données sont
-            au-dessus de la racine web : même en devinant leur adresse, un visiteur ne peut pas les
-            atteindre.
+            Le <code>.htaccess</code> à la racine du projet envoie toutes les requêtes vers
+            <code>public/</code>. Le code applicatif, la configuration, les identifiants de base de
+            données et les fichiers de données sont dans les autres dossiers : tant que cette règle
+            de réécriture est active, un visiteur ne peut pas les atteindre, même en devinant leur
+            adresse.
           </p>
         </div>
 
@@ -224,7 +225,7 @@
 │   ├── .htaccess           <i>tout vers index.php, sauf les fichiers statiques</i>
 │   └── assets/             <i>css, js, images, photos envoyées</i>
 │
-├── <b>app/</b>                    <i>hors racine web</i>
+├── <b>app/</b>                    <i>jamais servi directement</i>
 │   ├── Controllers/        <i>public + Admin/</i>
 │   ├── Models/             <i>Blog, Message, Avis, Galerie</i>
 │   └── Views/              <i>layouts, pages, vues d'administration</i>
@@ -316,8 +317,9 @@
             <tbody>
               <tr>
                 <th scope="row">Lecture du code source ou des identifiants</th>
-                <td>Tout le code applicatif, la configuration et les données sont placés hors de la
-                  racine web. Seul <code>public/</code> est servi.</td>
+                <td>Le <code>.htaccess</code> racine renvoie toutes les requêtes vers
+                  <code>public/</code> : le code applicatif, la configuration et les données ne sont
+                  pas accessibles par une adresse.</td>
               </tr>
               <tr>
                 <th scope="row">Injection SQL</th>
@@ -439,11 +441,6 @@
                   d'utilisation.</td>
               </tr>
               <tr>
-                <th scope="row">Organiser son développement professionnel</th>
-                <td>Bloc 1</td>
-                <td>Rédaction d'une documentation technique complète du travail réalisé.</td>
-              </tr>
-              <tr>
                 <th scope="row">Concevoir et développer une solution applicative</th>
                 <td>Bloc 2 · SLAM</td>
                 <td>Architecture MVC conçue puis développée, du routeur aux vues, pour le site
@@ -464,12 +461,12 @@
               <tr>
                 <th scope="row">Protéger les données à caractère personnel</th>
                 <td>Bloc 3</td>
-                <td>Coordonnées transmises par le formulaire de contact stockées hors de la racine
-                  web, accessibles uniquement après authentification.</td>
+                <td>Coordonnées transmises par le formulaire de contact enregistrées en base, lisibles
+                  seulement après connexion à l'espace d'administration.</td>
               </tr>
               <tr>
-                <th scope="row">Garantir la disponibilité, l'intégrité et la confidentialité des services</th>
-                <td>Bloc 3</td>
+                <th scope="row">Assurer la cybersécurité d'une solution applicative et de son développement</th>
+                <td>Bloc 3 · SLAM</td>
                 <td>Protection contre l'injection SQL, le XSS, le CSRF et le dépôt de fichiers
                   piégés, empreintes bcrypt et régénération de session.</td>
               </tr>
