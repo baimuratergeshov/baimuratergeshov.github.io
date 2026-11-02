@@ -44,7 +44,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -833,6 +833,11 @@ dialog.lightbox::backdrop {
 .data-table th[scope="row"] {
   color: var(--ink);
   font-weight: 400;
+}
+
+.data-table th[scope="row"] {
+  vertical-align: top;
+  border-bottom-color: var(--line);
 }
 
 .data-table .ok {
