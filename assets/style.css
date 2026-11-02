@@ -212,9 +212,17 @@ kbd {
 }
 
 .site-name {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
+}
+
+.site-name img {
+  height: 2rem;
+  width: auto;
 }
 
 .site-nav {
