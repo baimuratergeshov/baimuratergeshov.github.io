@@ -90,9 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function update() {
       waiting = false;
-      var line = window.innerHeight * 0.35;
       var active = null;
-      items.forEach(function (i) {
+      items.forEach(function (i, n) {
+        /* la dernière section est courte : on l'active plus tôt */
+        var line = window.innerHeight * (n === items.length - 1 ? 0.7 : 0.35);
         if (i.section.getBoundingClientRect().top <= line) active = i;
       });
       /* en bas de page, la dernière section n'atteint pas toujours la ligne */
