@@ -78,6 +78,43 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
   })();
 
+  /* lien actif du menu selon la section affichée (page d'accueil seulement) */
+  (function () {
+    var home = document.querySelector('.site-nav a[aria-current="page"]');
+    var items = Array.prototype.slice.call(document.querySelectorAll('.site-nav a[href^="#"]'))
+      .map(function (a) { return { link: a, section: document.getElementById(a.getAttribute('href').slice(1)) }; })
+      .filter(function (i) { return i.section; });
+    if (!home || !items.length) return;
+
+    var waiting = false;
+
+    function update() {
+      waiting = false;
+      var line = window.innerHeight * 0.35;
+      var active = null;
+      items.forEach(function (i) {
+        if (i.section.getBoundingClientRect().top <= line) active = i;
+      });
+      /* en bas de page, la dernière section n'atteint pas toujours la ligne */
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        active = items[items.length - 1];
+      }
+
+      home.removeAttribute('aria-current');
+      items.forEach(function (i) { i.link.removeAttribute('aria-current'); });
+      if (active) active.link.setAttribute('aria-current', 'true');
+      else home.setAttribute('aria-current', 'page');
+    }
+
+    function onScroll() {
+      if (!waiting) { waiting = true; requestAnimationFrame(update); }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  })();
+
   /* défilement de l'arrière-plan */
   function restoreScroll() {
     if (!document.querySelector('dialog[open]')) document.body.style.overflow = '';
